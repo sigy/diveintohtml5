@@ -1,0 +1,4 @@
+CO PREFEROVAT?
+
+HTML elements = HTML elementy vs *HTML prvky* (vs prvky HTML)
+DOM - sklonovat nebo ne? *v DOMu* vs v DOM

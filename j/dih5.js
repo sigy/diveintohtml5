@@ -107,7 +107,7 @@ $(document).ready(function() {
     }); /* document.ready */
 
 function hideTOC() {
-    var toc = '<a href="javascript:showTOC()">show table of contents</a>';
+    var toc = '<a href="javascript:showTOC()">zobraz obsah</a>';
     $("#toc").html(toc);
 }
 
@@ -128,6 +128,6 @@ function showTOC() {
 	toc += '</ol>';
 	level -= 1;
     }
-    toc = '<a href="javascript:hideTOC()">hide table of contents</a><ol start=0><li><a href=table-of-contents.html><span class=u>&uarr;</span> Full table of contents</a></li>' + toc.substring(4);
+    toc = '<a href="javascript:hideTOC()">skryj obsah</a><ol start=0><li><a href=table-of-contents.html><span class=u>&uarr;</span> Kompletní obsah</a></li>' + toc.substring(4);
     $("#toc").html(toc);
 }

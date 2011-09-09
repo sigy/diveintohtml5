@@ -80,7 +80,7 @@ body{counter-reset:h1 2}
 
 <p><abbr>HTML5</abbr> definuje <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>prvek &lt;canvas></a> jako &#8222;na rozlišení závislé plátno, které lze použít pro vykreslení grafů, herní grafiky nebo jiných obrázků <i>za běhu</i>.&#8221; Prvek <dfn>canvas</dfn> vytvoří na vaší stránce obdélník, do kterého můžete JavaScriptem nakreslit, cokoliv si budete přát. <abbr>HTML5</abbr> definuje sadu funkcí (&#8222;the canvas <abbr>API</abbr>&#8221;) pro kreslení tvarů, definování cest, tvorbu gradientů a používání transformací.
 
-<p>Test podpory canvas <abbr>API</abbr> použivá <a href=#techniques>detekční techniku #2</a>. Pokud váš prohlížeč podoruje canvas <abbr>API</abbr>, pak objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;canvas></code> bude obsahovat <a href=canvas.html#shapes>metodu <code>getContext()</code></a>. Pokud váš pohlížeč canvas <abbr>API</abbr> nepodporuje, tak objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;canvas></code> bude mít pouze sadu běžných vlastností, ovšem žádnou z těch specifických pro canvas.
+<p>Test podpory canvas <abbr>API</abbr> použivá <a href=#techniques>detekční techniku #2</a>. Pokud váš prohlížeč podporuje canvas <abbr>API</abbr>, pak objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;canvas></code> bude obsahovat <a href=canvas.html#shapes>metodu <code>getContext()</code></a>. Pokud váš pohlížeč canvas <abbr>API</abbr> nepodporuje, tak objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;canvas></code> bude mít pouze sadu běžných vlastností, ovšem žádnou z těch specifických pro canvas.
 
 <pre><code>function supports_canvas() {
   return !!document.createElement('canvas').getContext;
@@ -99,7 +99,7 @@ body{counter-reset:h1 2}
 
 <pre><code>return <mark>!!</mark>document.createElement('canvas').getContext;</code></pre>
 
-<p>Tato funkce ověří podporu velké části canvas <abbr>API</abbr>, což zahrduje <a href=canvas.html#shapes>tvary</a>, <a href=canvas.html#paths>cesty</a>, <a href=canvas.html#gradients>gradienty <i class=baa>&amp;</i> vzory</a>. Nedokáže detekovat knihovny třetích stran jako je knihovna <a href=canvas.html#ie><code>explorercanvas</code></a> implementující canvas <abbr>API</abbr> do Microsoft Internet Exploreru.
+<p>Tato funkce ověří podporu velké části canvas <abbr>API</abbr>, což zahrnuje <a href=canvas.html#shapes>tvary</a>, <a href=canvas.html#paths>cesty</a>, <a href=canvas.html#gradients>gradienty <i class=baa>&amp;</i> vzory</a>. Nedokáže detekovat knihovny třetích stran jako je knihovna <a href=canvas.html#ie><code>explorercanvas</code></a> implementující canvas <abbr>API</abbr> do Microsoft Internet Exploreru.
 
 <p>Funkci nemusíte psát sami, místo toho můžete použít <a href=#modernizr>Modernizr</a>, aby detekoval canvas <abbr>API</abbr> za vás.
 
@@ -165,7 +165,7 @@ body{counter-reset:h1 2}
 
 <p>Prohlížeče, které nepodorují <abbr>HTML5</abbr> video, budou prvek <code>&lt;video></code> zcela ignorovat. Toho ovšem můžete využít a nabídnout jim místotoho k přehrání video pomocí pluginu. Kroc Camen sestavil řešení nazvané <a href=http://camendesign.com/code/video_for_everybody>Video for Everybody! (Video pro každého)</a>, které používá <abbr>HTML5</abbr> video tam, kde je to možné, a ve starších prohlížečích využije QuickTime nebo Flash. Krocovo řešení navíc nepoužívá žádný JavaScript a funguje teoreticky ve všech prohlížečích včetně mobilních.
 
-<p>Pokud chcete s videem dělat víc, než jen ho umístit na stránku a přehrát, musíte už použít JavaScript. Test podpory videa využívá <a href=#techniques>detekční techniku #2</a>. Pokud váš prohlížeč podoruje <abbr>HTML5</abbr> video, tak objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;video></code> bude obsahovat metodu <code>canPlayType()</code>. Pokud váš prohlížeč nepodporuje <abbr>HTML5</abbr> video, tak objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;video></code> bude mít pouze sadu vlastností běžných pro všechny prvky HTML. Podporu videa můžete otestovat touto funkcí:
+<p>Pokud chcete s videem dělat víc, než jen ho umístit na stránku a přehrát, musíte už použít JavaScript. Test podpory videa využívá <a href=#techniques>detekční techniku #2</a>. Pokud váš prohlížeč podporuje <abbr>HTML5</abbr> video, tak objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;video></code> bude obsahovat metodu <code>canPlayType()</code>. Pokud váš prohlížeč nepodporuje <abbr>HTML5</abbr> video, tak objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;video></code> bude mít pouze sadu vlastností běžných pro všechny prvky HTML. Podporu videa můžete otestovat touto funkcí:
 
 <pre><code>function supports_video() {
   return !!document.createElement('video').canPlayType;
@@ -187,17 +187,17 @@ body{counter-reset:h1 2}
 
 <p class=a>&#x2767;
 
-<h2 id=video-formats>Video formáty</h2>
+<h2 id=video-formats>Formáty videa</h2>
 
-<p>Video formats are like written languages. An English newspaper may convey the same information as a Spanish newspaper, but if you can only read English, only one of them will be useful to you! To play a video, your browser needs to understand the &#8220;language&#8221; in which the video was written.
+<p>Formáty videa bychom mohli přirovnat k psaným jazykům. Noviny v češtině mohou sdělovat stejnou informaci jako španělské noviny, ovšem pokud umít číst pouze česky, tak vám k něčemu budou pouze ty první. Aby prohlížeč mohl přehrát video, musí rozumět &#8222;jazyku&#8221;, kterým je video napsáno.
 
-<p class=ss style="float:left;margin:0 1.75em 1.75em 0;width:250px"><img src=i/openclipart.org_johnny_automatic_man_reading_newspaper.png alt="man reading newspaper" width=250 height=261><br><span id=live-video-formats></span>
+<p class=ss style="float:left;margin:0 1.75em 1.75em 0;width:250px"><img src=i/openclipart.org_johnny_automatic_man_reading_newspaper.png alt="muž čtoučí noviny" width=250 height=261><br><span id=live-video-formats></span>
 
-<p>The &#8220;language&#8221; of a video is called a &#8220;codec&#8221; &mdash; this is the algorithm used to encode the video into a stream of bits. There are dozens of codecs in use all over the world. Which one should you use? The unfortunate reality of <abbr>HTML5</abbr> video is that browsers can&#8217;t agree on a single codec. However, they seem to have narrowed it down to two. One codec costs money (because of patent licensing), but it works in <a href=http://www.apple.com/safari/>Safari</a> and on the iPhone.  (This one also works in Flash if you use a solution like <a href=http://camendesign.com/code/video_for_everybody>Video for Everybody!</a>) The other codec is free and works in open source browsers like <a href=http://code.google.com/chromium/>Chromium</a> and <a href=http://www.getfirefox.com/>Mozilla Firefox</a>.
+<p>Takový &#8222;jazyk&#8221;, ve kterém je video zapsáno, se nazývá &#8220;kodek&#8221; &mdash; jedná se o algoritmus, podle kterého se video zakóduje do řady bitů. Existuje hromada kodeků, jenže který s nich máme použít? Skutečnost je smutná, prohlížeče se nedokázaly dohodnut na používání jednoho stejného kodeku. Ovšem, alespoň celou tu hromadu kodeků změnšily na pouhé dva. První kodek je placený (platí se licenční poplatky za patenty), ale funguje v <a href=http://www.apple.com/safari/>Safari</a> a na iPhone. (Funguje také ve Flashi, pokud použijete řešení typu <a href=http://camendesign.com/code/video_for_everybody>Video for Everybody!</a>.) Druhý kodek je zdarma a funguje v open source prohlžečích jako je <a href=http://code.google.com/chromium/>Chromium</a> a <a href=http://www.getfirefox.com/>Mozilla Firefox</a>.
 
-<p>Checking for video format support uses <a href=#techniques>detection technique #3</a>. If your browser supports <abbr>HTML5</abbr> video, the <abbr>DOM</abbr> object it creates to represent a <code>&lt;video></code> element will have a <code>canPlayType()</code> method. This method will tell you whether the browser supports a particular video format.
+<p>Test podpory formátů videa používá <a href=#techniques>detekční techniku #3</a>. Pokud váš prohlížeč podporuje <abbr>HTML5</abbr> video, tak objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;video></code> bude obsahovat metodu <code>canPlayType()</code>. Tato metoda vám řekne, zda prohlížeč podporuje konkrétní formát videa.
 
-<p>This function checks for the patent-encumbered format supported by Macs and iPhones.
+<p>Tato funkce otestuje patenty zatížený formát, který funguje na Macích a iPhonech.
 
 <pre><code>function supports_h264_baseline_video() {
   if (!supports_video()) { return false; }
@@ -205,27 +205,27 @@ body{counter-reset:h1 2}
   return v.canPlayType('video/mp4; codecs="avc1.42E01E, mp4a.40.2"');
 }</code></pre>
 
-<p>The function starts by <a href=#video>checking for <abbr>HTML5</abbr> video support</a>, using the <code>supports_video()</code> function you just saw in the previous section. If your browser doesn&#8217;t support <abbr>HTML5</abbr> video, it certainly won&#8217;t support any video formats!
+<p>Funkce začíná <a href=#video>otestováním podporu <abbr>HTML5</abbr> videa</a> pomocí funkce <code>supports_video()</code>, kterou jste poznali v předchozí sekci. Pokud váš prohlížeč nepodporuje <abbr>HTML5</abbr> video, nebude také podporovat žádný formát videa.
 
 <pre><code>  if (<mark>!supports_video()</mark>) { return false; }</code></pre>
 
-<p>Then the function creates a dummy <code>&lt;video></code> element (but doesn&#8217;t attach it to the page, so it won&#8217;t be visible) and calls the <code>canPlayType()</code> method. This method is guaranteed to be there, because the <code>supports_video()</code> function just checked for it.
+<p>Po té funce vytvoří prázný prvek <code>&lt;video></code> (ovšem nevloží ho do stránky, takže nebude viditelný) a zavolá metodu <code>canPlayType()</code>. Ta musí existovat, protože to již ověřila funkce <code>supports_video()</code>.
 
 <pre><code>  var <mark>v</mark> = document.createElement("video");</code></pre>
 
-<p>A &#8220;video format&#8221; is really a combination of different things. In technical terms, you&#8217;re asking the browser whether it can play H.264 Baseline video and AAC LC audio in an MPEG-4 container. (I&#8217;ll explain what all that means in <a href=video.html>the Video chapter</a>. You might also be interested in reading <a href=http://diveintomark.org/tag/give>A gentle introduction to video encoding</a>.)
+<p>&#8222;Formát videa&#8221; je ve skutečností kombinací několika věcí. Technicky řečeno se prohlížeče ptáte, zda dokáže přehrát video v H.264 a zvuk v AAC LC, obojí vložené v kontejneru. (Co to všechno znamená si vysvětlíme v <a href=video.html>kapitole o videu</a>. Může vás také zajímat článek <a href=http://diveintomark.org/tag/give>A gentle introduction to video encoding</a>.)
 
 <pre><code>  return v.canPlayType('<mark>video/mp4; codecs="avc1.42E01E, mp4a.40.2"</mark>');</code></pre>
 
-<p>The <code>canPlayType()</code> function doesn&#8217;t return <code>true</code> or <code>false</code>. In recognition of how complex video formats are, the function returns a string:
+<p>Funkce <code>canPlayType()</code> nevrací prosté <code>true</code> nebo <code>false</code>. Podle toho, o jak komplexní formáty videa se jedná, vrací funkce řetezce:
 
 <ul>
-<li><code>"probably"</code> if the browser is fairly confident it can play this format
-<li><code>"maybe"</code> if the browser thinks it might be able to play this format
-<li><code>""</code> (an empty string) if the browser is certain it can&#8217;t play this format
+<li><code>"probably"</code> pokud je prohlížeč opravdu přesvědčen, že může tento formát přehrát
+<li><code>"maybe"</code> pokud si prohlížeč myslí, že možná může tento formát přehrát
+<li><code>""</code> (prázdný řetězec) pokud si je prohlížeč jistý, že tento formát přehrát nemůže
 </ul>
 
-<p>This second function checks for the open video format supported by Mozilla Firefox and other open source browsers. The process is exactly the same; the only difference is the string you pass in to the <code>canPlayType()</code> function. In technical terms, you&#8217;re asking the browser whether it can play Theora video and Vorbis audio in an Ogg container.
+<p>Následující druhá funkce otestuje podporu otevřeného formátu videa, který podporuje Mozilla Firefox a další open source prohlížeče. Celý proces je stejný, s jediným rozdílem - v řetězci, který předáme funkci <code>canPlayType()</code>. Technicky řečeno se prohlížeče ptáte, zda dokáže přehrát video v Theora a zkub v Vorbis, to vše vložené do Ogg kontejneru.
 
 <pre><code>function supports_ogg_theora_video() {
   if (!supports_video()) { return false; }
@@ -233,7 +233,7 @@ body{counter-reset:h1 2}
   return v.canPlayType(<mark>'video/ogg; codecs="theora, vorbis"'</mark>);
 }</code></pre>
 
-<p>Finally, <a href=http://www.webmproject.org/>WebM</a> is a newly open-sourced (and non-patent-encumbered) video codec that will be included in the next version of major browsers, including Chrome, <a href=http://nightly.mozilla.org/webm/>Firefox</a>, and <a href=http://labs.opera.com/news/2010/05/19/>Opera</a>. You can use the same technique to detect support for open WebM video.
+<p>A konečně, <a href=http://www.webmproject.org/>WebM</a> je nový open source (a patenty nezatížený) kodek videa, který bude obsažen v dalších verzích hlavních prohlížečů včetně Chrome, <a href=http://nightly.mozilla.org/webm/>Firefoxu</a> a <a href=http://labs.opera.com/news/2010/05/19/>Opery</a>. Pro detekci podpory formátu videa WebM použijeme stejnou techniku.
 
 <pre><code>function supports_webm_video() {
   if (!supports_video()) { return false; }
@@ -241,17 +241,17 @@ body{counter-reset:h1 2}
   return v.canPlayType(<mark>'video/webm; codecs="vp8, vorbis"'</mark>);
 }</code></pre>
 
-<p>Instead of writing this function yourself, you can use <a href=#modernizr>Modernizr</a> (1.5 or later) to detect support for different <abbr>HTML5</abbr> video formats.
+<p>Funkce nemusíte psát sami, místo toho můžete použít <a href=#modernizr>Modernizr</a> (1.5 nebo novější), aby detekoval jednotlivé formáty <abbr>HTML5</abbr> videa.
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for <abbr>HTML5</abbr> video formats
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> otestuje podporované formáty <abbr>HTML5</abbr> videa
 <pre><code>if (Modernizr.video) {
-  // let's play some video! but what kind?
+  // pusťme si teď nějaké video! ale jaké?
   if (<mark>Modernizr.video.webm</mark>) {
-    // try WebM
+    // zkusme WebM
   } else if (<mark>Modernizr.video.ogg</mark>) {
-    // try Ogg Theora + Vorbis in an Ogg container
+    // zkusme Ogg Theora + Vorbis v Ogg kontejneru
   } else if (<mark>Modernizr.video.h264</mark>){
-    // try H.264 video + AAC audio in an MP4 container
+    // zkusme H.264 video + AAC audio v MP4 kontejneru
   }
 }</code></pre>
 
@@ -259,21 +259,21 @@ body{counter-reset:h1 2}
 
 <h2 id=storage>Local Storage</h2>
 
-<p class=ss style="width:135px"><img src=i/openclipart.org_johnny_automatic_half_stack_of_horizontal_sections.png alt="filing cabinet with drawers of different sizes" width=135 height=341><br><span id=live-storage></span>
+<p class=ss style="width:135px"><img src=i/openclipart.org_johnny_automatic_half_stack_of_horizontal_sections.png alt="kabinet plný zásuvek rozličných rozměrů" width=135 height=341><br><span id=live-storage></span>
 
-<p><a href=http://dev.w3.org/html5/webstorage/><abbr>HTML5</abbr> storage</a> provides a way for web sites to store information on your computer and retrieve it later. The concept is similar to cookies, but it&#8217;s designed for larger quantities of information. Cookies are limited in size, and your browser sends them back to the web server every time it requests a new page (which takes extra time and precious bandwidth). <abbr>HTML5</abbr> storage stays on your computer, and web sites can access it with JavaScript after the page is loaded.
+<p><a href=http://dev.w3.org/html5/webstorage/><abbr>HTML5</abbr> úložiště</a> nabízí způsob, jakým mohou webové stránky uložit informace na váš počítač a pozdeji je znovu načíst. Jedná se podobný koncept jako byly cookies, ovšem je navržený pro větší množství informací. Cookies mají omezenou velikost a váš prohlížeč je zasílá zpět na server kdykoliv požádá o novou stránku (což zabírá čas i datové pásmo). <abbr>HTML5</abbr> úložiště zůstává na vašem počítači, webové stránky k němu mohou přistoupit pomocí JavaScriptu.
 
 <div class="pf clear">
-<h4>Ask Professor Markup</h4>
+<h4>Zeptejte se profesora Značky</h4>
 <div class=inner>
 <blockquote class=note>
-<p><span>&#x261E;</span>Q: Is local storage really part of <abbr>HTML5</abbr>? Why is it in a separate specification?<br>
-A: The short answer is yes, local storage is part of <abbr>HTML5</abbr>. The slightly longer answer is that local storage used to be part of the main <abbr>HTML5</abbr> specification, but it was split out into a separate specification because some people in the <abbr>HTML5</abbr> Working Group complained that <abbr>HTML5</abbr> was too big. If that sounds like slicing a pie into more pieces to reduce the total number of calories&hellip; well, welcome to the wacky world of standards.
+<p><span>&#x261E;</span>OT: Je lokální úložiště skutečně součástí <abbr>HTML5</abbr>? Proč se nachází ve zvláštní specifikaci?<br>
+OD: Stručně řečeno ano, lokální úložitě je součástí <abbr>HTML5</abbr>. Trochu delší odpověd je, že lokální úložiště bylo součástí hlavní specifikace <abbr>HTML5</abbr>, ale bylo odděleno do zvláštní specifikace, protože některým členům pracovní skupiny pro <abbr>HTML5</abbr> se nelíbilo, že je specifikace <abbr>HTML5</abbr> příliš dlouhá. Pokud vám to zní jako rozkrájení koláče na menší kousky ve snaze snížit počet jeho kalorií, pak ano - vítejte v šíleném světě standardů.
 </blockquote>
 </div>
 </div>
 
-<p>Checking for <abbr>HTML5</abbr> storage support uses <a href=#techniques>detection technique #1</a>. If your browser supports <abbr>HTML5</abbr> storage, there will be a <code>localStorage</code> property on the global <code>window</code> object. If your browser doesn&#8217;t support <abbr>HTML5</abbr> storage, the <code>localStorage</code> property will be undefined. Due to an unfortunate bug in older versions of Firefox, this test will raise an exception if cookies are disabled, so the entire test is wrapped in a <code>try..catch</code> statement.
+<p>Test podpory <abbr>HTML5</abbr> úložiště využívá <a href=#techniques>detekční techniku #1</a>. Pokud váš prohlížeč podporuje <abbr>HTML5</abbr> úložiště, pak bude na globálním objektu <code>window</code> existovat vlastnost <code>localStorage</code>. Pokud váš prohlížeč nepodporuje <abbr>HTML5</abbr> úložiště, pak bude vlastnost <code>localStorage</code> nedefinovaná. Nepříjemná chyba ve starších verzích Firefoxu způsobuje, že tento test vyvolá výjimky, pokud je vypnutá podpora cookies, proto je nutné celý test vložit do bloku <code>try..catch</code>.
 
 <pre><code>function supports_local_storage() {
   try {
@@ -283,24 +283,24 @@ A: The short answer is yes, local storage is part of <abbr>HTML5</abbr>. The sli
   }
 }</code></pre>
 
-<p>Instead of writing this function yourself, you can use <a href=#modernizr>Modernizr</a> (1.1 or later) to detect support for <abbr>HTML5</abbr> local storage.
+<p>Funkci nemusíte psát sami, místo toho můžete použít <a href=#modernizr>Modernizr</a> (1.1 nebo novější), aby detekoval podporu lokálního úložiště <abbr>HTML5</abbr>.
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for <abbr>HTML5</abbr> local storage
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> otestuj podporu lokálního úložiště <abbr>HTML5</abbr>
 <pre><code>if (<mark>Modernizr.localstorage</mark>) {
-  // window.localStorage is available!
+  // window.localStorage je dostupné!
 } else {
-  // no native support for local storage :(
-  // maybe try Gears or another third-party solution
+  // nativní podpora pro lokální úložiště neexistuje 8-(
+  // mohli bychom ještě zkusit Gears nebo jiné řešení od třetích stran
 }</code></pre>
 
-<p>Note that JavaScript is case-sensitive. The Modernizr attribute is called <code>localstorage</code> (all lowercase), but the <abbr>DOM</abbr> property is called <code>window.localStorage</code> (mixed case).
+<p>Nezapomeňte, že JavaScript je case-sensitive. Vlastnost Modernizru se jmenuje <code>localstorage</code> (všechna písmena malá), ovšem vlastnost objektu <abbr>DOM</abbr> se jmenuje <code>window.localStorage</code>.
 
 <div class="pf clear">
-<h4>Ask Professor Markup</h4>
+<h4>Zeptejte se profefora Značky</h4>
 <div class=inner>
 <blockquote class=note>
-<p><span>&#x261E;</span>Q: How secure is my <abbr>HTML5</abbr> storage database? Can anyone read it?<br>
-A: Anyone who has physical access to your computer can probably look at (or even change) your <abbr>HTML5</abbr> storage database. Within your browser, any web site can read and modify its own values, but sites can&#8217;t access values stored by other sites. This is called a <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/origin-0.html#origin-0>same-origin restriction</a>.
+<p><span>&#x261E;</span>OT: Jak je moje <abbr>HTML5</abbr> úložiště zabezpečené? Může ho kdokoliv přečíst?<br>
+OD: Kdokoliv, kdo má fyzický přístup k počítači by se mohl na data vašeho <abbr>HTML5</abbr> úložiště podívat (nebo je dokonce změnit). V prohlížeči může každá webová stránka číst a upravovat svá vlastní data, ovšem nemůže přistupovat k datům uloženým z jiných webů. Říká se tomu <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/origin-0.html#origin-0>same-origin restriction (omezení dle původu)</a>.
 </blockquote>
 </div>
 </div>
@@ -311,170 +311,170 @@ A: Anyone who has physical access to your computer can probably look at (or even
 
 <p class=ss style="margin:1.75em"><span id=live-web-workers></span>
 
-<p><a href=http://www.whatwg.org/specs/web-workers/current-work/>Web Workers</a> provide a standard way for browsers to run JavaScript in the background. With web workers, you can spawn multiple &#8220;threads&#8221; that all run at the same time, more or less. (Think of how your computer can run multiple applications at the same time, and you&#8217;re most of the way there.) These &#8220;background threads&#8221; can do complex mathematical calculations, make network requests, or access <a href=#local-storage>local storage</a> while the main web page responds to the user scrolling, clicking, or typing.
+<p><a href=http://www.whatwg.org/specs/web-workers/current-work/>Web Workers</a> nabízí standardizovanou cestu, jakou mohou prohlížeče spouštět javascriptový kód na pozadí. S pomocé web workers můžete spustit několik &#8222;vláken&#8221; a ty pak mohou běžet více méně ve stejném čase. (Stačí, když si představíte, že váš počítač dokáže součastně spustit několik aplikací, je to skoro to samé.) Tato &#8222;vlákna na pozadí&#8221; mohou provádět složité matematické výpočty a sítové požadavky nebo přistupovak k <a href=#local-storage>local storage</a> zatímco hlavní webová stránka reaguje na akce uživatele, ať už se jedná o skrolování, klikání nebo psaní.
 
-<p>Checking for web workers uses <a href=#techniques>detection technique #1</a>. If your browser supports the Web Worker <abbr>API</abbr>, there will be a <code>Worker</code> property on the global <code>window</code> object. If your browser doesn&#8217;t support the Web Worker <abbr>API</abbr>, the <code>Worker</code> property will be undefined.
+<p>Test podpory web workers využívá <a href=#techniques>detekční techniku #1</a>. Pokud váš prohlížeč podporuje Web Worker <abbr>API</abbr>, bude u globálního objektu <code>window</code> existovat vlastnost <code>Worker</code>. Pokud váš prohlížeč nepodporuje Web Worker <abbr>API</abbr>, pak bude vlastnost <code>Worker</code> nedefinovaná.
 
 <pre><code>function supports_web_workers() {
   return !!window.Worker;
 }</code></pre>
 
-<p>Instead of writing this function yourself, you can use <a href=#modernizr>Modernizr</a> (1.1 or later) to detect support for web workers.
+<p>Funkci nemusíte psát sami, místo toho můžete použít <a href=#modernizr>Modernizr</a> (1.1 nebo novější), aby detekoval podporu web workers.
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for web workers
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> otestuj podporu web workers
 <pre><code>if (<mark>Modernizr.webworkers</mark>) {
-  // window.Worker is available!
+  // window.Worker je dostupné!
 } else {
-  // no native support for web workers :(
-  // maybe try Gears or another third-party solution
+  // chybí nativní podpora pro web workers 8-(
+  // můžeme vyzkoušet Gears nebo jiný plugin třetích stran
 }</code></pre>
 
-<p>Note that JavaScript is case-sensitive. The Modernizr attribute is called <code>webworkers</code> (all lowercase), but the <abbr>DOM</abbr> object is called <code>window.Worker</code> (with a capital &#8220;W&#8221; in &#8220;Worker&#8221;).
+<p>Nezapomeňte, že JavaScript je case-sensitive. Vlastnost Modernizru se jmenuje <code>webworkers</code> (všechna písmena malá), ovšem vlastnost objektu <abbr>DOM</abbr> se jmenuje <code>window.Worker</code>.
 
 <p class=a>&#x2767;
 
-<h2 id=offline>Offline Web Applications</h2>
+<h2 id=offline>Offline webové aplikace</h2>
 
-<p class=ss style="width:257px"><img src=i/openclipart.org_johnny_automatic_cabin_along_stream.png alt="cabin in the woods" width=257 height=242><br><span id=live-offline></span>
+<p class=ss style="width:257px"><img src=i/openclipart.org_johnny_automatic_cabin_along_stream.png alt="chata v lesích" width=257 height=242><br><span id=live-offline></span>
 
-<p>Reading static web pages offline is easy: connect to the Internet, load a web page, disconnect from the Internet, drive to a secluded cabin, and read the web page at your leisure. (To save time, you may wish to skip the step about the cabin.) But what about web applications like <a href=http://mail.google.com/>Gmail</a> or <a href=http://docs.google.com/>Google Docs</a>? Thanks to <abbr>HTML5</abbr>, anyone (not just Google!) can build a web application that works offline.
+<p>Je snadné číst webové stránky, když jste offline: stačí se připojit k internetu, načíst webovou stránku, odpojit se od internetu, odjet na opuštěnou chatu a tam si vklidu stránku přečíst. (Abyste ušetřili čas, klidně přeskočte ten krok s chatou.) Ovšem, co webové aplikace jako jsou <a href=http://mail.google.com/>Gmail</a> nebo <a href=http://docs.google.com/>Dokumenty Google</a>? S <abbr>HTML5</abbr> může kdokoliv (nejen Google!) vytvářet aplikace, které fungují offline.
 
-<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#offline>Offline web applications</a> start out as online web applications. The first time you visit an offline-enabled web site, the web server tells your browser which files it needs in order to work offline. These files can be anything &mdash; <abbr>HTML</abbr>, JavaScript, images, even <a href=#video>videos</a>. Once your browser downloads all the necessary files, you can revisit the web site even if you&#8217;re not connected to the Internet. Your browser will notice that you&#8217;re offline and use the files it has already downloaded. When you get back online, any changes you&#8217;ve made can be uploaded to the remote web server.
+<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#offline>Offline webové aplikace</a> začínají jako online webové aplikace. Když prvně navštívíte aplikaci podporující režim offline, webový server řekne prohlížeči, které soubory bude potřebovat, aby mohl fungovat offline. Může se jednat o jakékoliv soubory &mdash; <abbr>HTML</abbr>, JavaScript, obrázky, dokonce <a href=#video>videa</a>. Jakmile váš prohlížeč stáhne všechny potřebné soubory, můžete stránku znovu navštívit, i když nejste připojeni k internetu. Váš prohlížeč si všimne, že jste právě offline a použije soubory, které si předtím stáhnul. Jakmile se opět připojíte online, všechny změny, které jste provedli, se nahrají na vzdálená webový server.
 
-<p>Checking for offline support uses <a href=#techniques>detection technique #1</a>. If your browser supports offline web applications, there will be an <code>applicationCache</code> property on the global <code>window</code> object. If your browser doesn&#8217;t support offline web applications, the <code>applicationCache</code> property will be undefined. You can check for offline support with the following function:
+<p>Test na podporu pro offline používá <a href=#techniques>detekční techniku #1</a>. Pokud váš prohlížeč podporuje offline webové aplikace, bude u globálního objektu <code>window</code> existovat vlastnot <code>applicationCache</code>. Pokud váš prohlížeč offline webové aplikace nepodporuje, pak bude vlastnost <code>applicationCache</code> nedefinovaná. Podporu pro offline webové aplikace můžete otestovat následující funkcí:
 
 <pre><code>function supports_offline() {
   return !!window.applicationCache;
 }</code></pre>
 
-<p>Instead of writing this function yourself, you can use <a href=#modernizr>Modernizr</a> (1.1 or later) to detect support for offline web applications.
+<p>Funkci nemusíte psát sami, místo toho můžete použít <a href=#modernizr>Modernizr</a> (1.1 nebo novější), aby podporu detekoval.
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for offline support
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> otestuj podporu pro offline webové aplikace
 <pre><code>if (<mark>Modernizr.applicationcache</mark>) {
-  // window.applicationCache is available!
+  // window.applicationCache je dostupné!
 } else {
-  // no native support for offline :(
-  // maybe try Gears or another third-party solution
+  // native podpora offline aplikací není dostupná 8-(
+  // můžeme vyzkoušet Gears nebo jiný plugin třetích stran
 }</code></pre>
 
-<p>Note that JavaScript is case-sensitive. The Modernizr attribute is called <code>applicationcache</code> (all lowercase), but the <abbr>DOM</abbr> object is called <code>window.applicationCache</code> (mixed case).
+<p>Nezapomeňte, že JavaScript je case-sensitive. Vlastnost Modernizru se jmenuje  <code>applicationcache</code> (všechna písmena malá), ovšem vlastnost objektu <abbr>DOM</abbr> se jmenuje <code>window.applicationCache</code>.
 
 <p class=a>&#x2767;
 
-<h2 id=geolocation>Geolocation</h2>
+<h2 id=geolocation>Geolokace</h2>
 
-<p>Geolocation is the art of figuring out where you are in the world and (optionally) sharing that information with people you trust. There is more than one way to figure out where you are &mdash; your <abbr>IP</abbr> address, your wireless network connection, which cell tower your phone is talking to, or dedicated <abbr>GPS</abbr> hardware that calculates latitude and longitude from information sent by satellites in the sky.
+<p>Pomocí geolokace lze jistit, kde na světě se právě teď nacházíte a (volitelně) oznámit tuto informaci lidem, kterým důvěřujete. Existuje několik způsobů, jak je možné zjistit, kde se právě nacházíte &mdash; vaše <abbr>IP</abbr> adresa, vaše bezdrátové připojení k síti, přes které buňky telefonní sítě jste připojeni nebo vyhrazený <abbr>GPS</abbr> hardware, který spočítá vaši zeměpisnou šířku a délku na základě informací zaslaných satelity z oblohy.
 
-<p style="margin:0 auto;width:194px" id=geo-wrapper><img src=i/openclipart.org_johnny_automatic_globe_man.png alt="man with a globe for a head" width=194 height=317><br><span id=live-geolocation></span>
+<p style="margin:0 auto;width:194px" id=geo-wrapper><img src=i/openclipart.org_johnny_automatic_globe_man.png alt="muž s globusem místo hlavy" width=194 height=317><br><span id=live-geolocation></span>
 
 <div class="pf clear">
-<h4>Ask Professor Markup</h4>
+<h4>Zeptejte se profesora Značky</h4>
 <div class=inner>
 <blockquote class=note>
-<p><span>&#x261E;</span>Q: Is geolocation part of <abbr>HTML5</abbr>? Why are you talking about it?<br>
-A: Geolocation support is being added to browsers right now, along with support for new <abbr>HTML5</abbr> features. Strictly speaking, geolocation is being standardized by the <a href=http://www.w3.org/2008/geolocation/>Geolocation Working Group</a>, which is separate from the <abbr>HTML5</abbr> Working Group. But I&#8217;m going to talk about geolocation in this book anyway, because it&#8217;s part of the evolution of the web that&#8217;s happening now.
+<p><span>&#x261E;</span>OT: Je geolokace součástí <abbr>HTML5</abbr>? Proč o ní hovoříte?<br>
+OD: Podpora pro geolokaci je do prohlížečů přidávána právě teď, ve stejnou dobu, kdy se do prohlížečů přidávají nové vlastnosti <abbr>HTML5</abbr>. Přesně řečeno, geolokace je standardizována <a href=http://www.w3.org/2008/geolocation/>pracovní skupinout pro geolokaci</a>, která je nezávislá na pracovní skupině pro <abbr>HTML5</abbr>. Ovšem já do této knížky geolokaci stejně zahrnu, protože se jedná o součást evoluce webu, ke které dochází právě teď.
 </blockquote>
 </div>
 </div>
 
-<p>Checking for geolocation support uses <a href=#techniques>detection technique #1</a>. If your browser supports the geolocation <abbr>API</abbr>, there will be a <code>geolocation</code> property on the global <code>navigator</code> object. If your browser doesn&#8217;t support the geolocation <abbr>API</abbr>, the <code>geolocation</code> property will be undefined. Here&#8217;s how to check for geolocation support:
+<p>Test podpory geolokace používá <a href=#techniques>detekční techniku #1</a>. Pokud váš prohlížeč podporuje geolocation <abbr>API</abbr>, bude u globálního objektu <code>navigator</code> existovat vlastnost <code>geolocation</code>. Pokud váš prohlížeč geolocation <abbr>API</abbr> nepodporuje, tak vlastnost <code>geolocation</code> bude nedefinovaná. Podívejme se, jak otestovat podporu geolokace:
 
 <pre><code>function supports_geolocation() {
   return !!navigator.geolocation;
 }</code></pre>
 
-<p>Instead of writing this function yourself, you can use <a href=#modernizr>Modernizr</a> to detect support for the geolocation <abbr>API</abbr>.
+<p>Funkci nemusíte psát sami, místo toho můžete použít <a href=#modernizr>Modernizr</a>, který podporu geolocation <abbr>API</abbr> otestuje.
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for geolocation support
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> otestuj podporu geolokace
 <pre><code>if (<mark>Modernizr.geolocation</mark>) {
-  // let's find out where you are!
+  // tak a teď se podíváme, kde právě jsi!
 } else {
-  // no native geolocation support available :(
-  // maybe try Gears or another third-party solution
+  // nativní podpora pro geolokace není dostupná 8-(
+  // můžeme vyzkoušet Gears nebo jiný plugin třetích stran
 }</code></pre>
 
-<p>If your browser does not support the geolocation <abbr>API</abbr> natively, there is still hope. <a href=http://tools.google.com/gears/>Gears</a> is an open source browser plugin from Google that works on Windows, Mac, Linux, Windows Mobile, and Android. It provides features for older browsers that do not support all the fancy new stuff we&#8217;ve discussed in this chapter. One of the features that Gears provides is a geolocation <abbr>API</abbr>. It&#8217;s not the same as the <code>navigator.geolocation</code> <abbr>API</abbr>, but it serves the same purpose.
+<p>Pokud váš prohlížeč geolocation <abbr>API</abbr> nativně nepodporuje, stále ještě zbývá naděje. <a href=http://tools.google.com/gears/>Gears</a> je open source plugin od Googlu, který funguje na Windows, Macu, Linuxu, Windows Mobile a Androidu. Nabízí některé vlastnosti starším prohlížečům, které nepodporují novinky zmiňované v této kapitole. Jednou z vlastností, které Gears nabízí, je geolocation <abbr>API</abbr>. Není zcela stejné jako <code>navigator.geolocation</code> <abbr>API</abbr>, ale slouží ke stejnému účelu.
 
-<p>There are also device-specific geolocation <abbr>API</abbr>s on older mobile phone platforms, including <a href="http://www.tonybunce.com/2008/05/08/Blackberry-Browser-Amp-GPS.aspx">BlackBerry</a>, <a href="http://www.forum.nokia.com/infocenter/index.jsp?topic=/Web_Developers_Library/GUID-4DDE31C7-EC0D-4EEC-BC3A-A0B0351154F8.html">Nokia</a>, <a href="http://developer.palm.com/index.php?option=com_content&amp;view=article&amp;id=1673#GPS-getCurrentPosition">Palm</a>, and <a href=http://bondi.omtp.org/1.0/apis/geolocation.html><abbr title="Open Mobile Terminal Platform">OMTP</abbr> BONDI</a>.
+<p>Existují také geolocation <abbr>API</abbr> specifiká pro jednotlivá zařízení, ta najdeme na starších mobilních platformách včetně <a href="http://www.tonybunce.com/2008/05/08/Blackberry-Browser-Amp-GPS.aspx">BlackBerry</a>, <a href="http://www.forum.nokia.com/infocenter/index.jsp?topic=/Web_Developers_Library/GUID-4DDE31C7-EC0D-4EEC-BC3A-A0B0351154F8.html">Nokia</a>, <a href="http://developer.palm.com/index.php?option=com_content&amp;view=article&amp;id=1673#GPS-getCurrentPosition">Palm</a>, a <a href=http://bondi.omtp.org/1.0/apis/geolocation.html><abbr title="Open Mobile Terminal Platform">OMTP</abbr> BONDI</a>.
 
-<p>The <a href=geolocation.html>chapter on geolocation</a> will go into excruciating detail about how to use all of these different <abbr>API</abbr>s.
+<p><a href=geolocation.html>Kapitola o geolokaci</a> vás zasvětí do detailů toho, jak můžete tato odlišná <abbr>API</abbr> používat.
 
 <p class=a>&#x2767;
 
-<h2 id=input-types>Input Types</h2>
+<h2 id=input-types>Typy značky input</h2>
 
-<p class=ss style="width:261px"><img src=i/openclipart.org_johnny_automatic_typewriter.png alt="manual typewriter" width=261 height=228><br><span id=live-input-types></span>
+<p class=ss style="width:261px"><img src=i/openclipart.org_johnny_automatic_typewriter.png alt="psací stroj" width=261 height=228><br><span id=live-input-types></span>
 
-<p>You know all about web forms, right? Make a <code>&lt;form></code>, add a few <code>&lt;input type="text"></code> elements and maybe an <code>&lt;input type="password"></code>, and finish it off with an <code>&lt;input type="submit"></code> button.
+<p>O webových formulářích jste již určitě slyšeli, že? Vytvoříte <code>&lt;form></code>, přidáte několik prvků <code>&lt;input type="text"></code>, možná i <code>&lt;input type="password"></code> a všechno ukončíte tlačítkem <code>&lt;input type="submit"></code>.
 
-<p>You don&#8217;t know the half of it. <abbr>HTML5</abbr> defines over a dozen new input types that you can use in your forms.
+<p>Jenže to toho nevíte stěží polovinu. <abbr>HTML5</abbr> přidává přec tucet nových druhů značky input, které můžete použít ve vašich formulářích.
 
 <ol>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#text-state-and-search-state><code>&lt;input type="search"></code></a> for search boxes
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/number-state.html#number-state><code>&lt;input type="number"></code></a> for spinboxes
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/number-state.html#range-state><code>&lt;input type="range"></code></a> for sliders
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/number-state.html#color-state><code>&lt;input type="color"></code></a> for color pickers
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#telephone-state><code>&lt;input type="tel"></code></a> for telephone numbers
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#url-state><code>&lt;input type="url"></code></a> for web addresses
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state><code>&lt;input type="email"></code></a> for email addresses
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#date-state><code>&lt;input type="date"></code></a> for calendar date pickers
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#month-state><code>&lt;input type="month"></code></a> for months
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#week-state><code>&lt;input type="week"></code></a> for weeks
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#time-state><code>&lt;input type="time"></code></a> for timestamps
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#date-and-time-state><code>&lt;input type="datetime"></code></a> for precise, absolute date+time stamps
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#local-date-and-time-state><code>&lt;input type="datetime-local"></code></a> for local dates and times
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#text-state-and-search-state><code>&lt;input type="search"></code></a> pro vyhledávací boxy
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/number-state.html#number-state><code>&lt;input type="number"></code></a> pro zadávání čísel
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/number-state.html#range-state><code>&lt;input type="range"></code></a> pro posuvníky
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/number-state.html#color-state><code>&lt;input type="color"></code></a> pro výběr barev
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#telephone-state><code>&lt;input type="tel"></code></a> pro telefonní čísla
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#url-state><code>&lt;input type="url"></code></a> pro webové adresy
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state><code>&lt;input type="email"></code></a> pro e-mailové adresy
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#date-state><code>&lt;input type="date"></code></a> pro výběr data v kalendáři
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#month-state><code>&lt;input type="month"></code></a> pro výběr měsíce
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#week-state><code>&lt;input type="week"></code></a> pro výběr týdne
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#time-state><code>&lt;input type="time"></code></a> pro výběr času
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#date-and-time-state><code>&lt;input type="datetime"></code></a> pro výběr přesného absolutního údaje datum + čas
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#local-date-and-time-state><code>&lt;input type="datetime-local"></code></a> pro lokální datum a čas
 </ol>
 
-<p>Checking for <abbr>HTML5</abbr> input types uses <a href=#techniques>detection technique #4</a>. First, you create a dummy <code>&lt;input></code> element in memory. The default input type for all <code>&lt;input></code> elements is <code>"text"</code>. This will prove to be vitally important.
+<p>Test podpory nových <abbr>HTML5</abbr> typů značky input používá <a href=#techniques>detekční techniku #4</a>. Napřed vytvoříme prádný prvek <code>&lt;input></code> v paměti. Výchozím tydem pro všechny prvky <code>&lt;input></code> je <code>"text"</code>. To se ukáže jako velmi důležité.
 
 <pre><code>  var i = document.createElement("input");</code></pre>
 
-<p>Next, set the <code>type</code> attribute on the dummy <code>&lt;input></code> element to the input type you want to detect.
+<p>Po té nastavíme atribut <code>type</code> námi vytvořeného prvku <code>&lt;input></code> na typ, který chceme detekovat.
 
 <pre><code>  i.setAttribute("type", "color");</code></pre>
 
-<p>If your browser supports that particular input type, the <code>type</code> property will retain the value you set. If your browser doesn&#8217;t support that particular input type, it will ignore the value you set and the <code>type</code> property will still be <code>"text"</code>.
+<p>Pokud prohlížeč daný typ podporuje, pak bude vlastnost <code>type</code> mít hodnotu, jakou jsme jí zadali. Pokud prohlížeč daný typ nepodporuje, bude námi zadanou hodnotu ignorovat a vlastnost <code>type</code> bude stále <code>"text"</code>.
 
 <pre><code>  return i.type !== "text";</code></pre>
 
-<p>Instead of writing 13 separate functions yourself, you can use <a href=#modernizr>Modernizr</a> to detect support for all the new input types defined in <abbr>HTML5</abbr>. Modernizr reuses a single <code>&lt;input></code> element to efficiently detect support for all 13 input types. Then it builds a hash called <code>Modernizr.inputtypes</code>, that contains 13 keys (the <abbr>HTML5</abbr> <code>type</code> attributes) and 13 Boolean values (<code>true</code> if supported, <code>false</code> if not).
+<p>Než abyste psali všech 13 funkcí sami, můžete použít <a href=#modernizr>Modernizr</a>, který detekci všech nových typů definovaných v <abbr>HTML5</abbr> provede za vás. Modernizr používá jeden jediný prvek <code>&lt;input></code>, aby efektivně otestoval podporu všech 13 typů. Následně vytvoří asociativní pole nazvané <code>Modernizr.inputtypes</code>, které obsahuje 13 klíčů (názvy jednotlivých <code>typů</code>) a 13 logických hodnot (<code>true</code> pokud typ prohlížeč podporuje, <code>false</code> když ne).
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for native date picker
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> otestování podpory pro výběr data
 <pre><code>if (<mark>!Modernizr.inputtypes.date</mark>) {
-  // no native support for &lt;input type="date"> :(
-  // maybe build one yourself with <a href=http://docs.dojocampus.org/dojox/widget/Calendar>Dojo</a> or <a href=http://jqueryui.com/demos/datepicker/>jQueryUI</a>
+  // chybí native podpora pro &lt;input type="date"> 8-(
+  // můžete sami vytvořit pomocí <a href=http://docs.dojocampus.org/dojox/widget/Calendar>Dojo</a> nebo <a href=http://jqueryui.com/demos/datepicker/>jQueryUI</a>
 }</code></pre>
 
 <p class=a>&#x2767;
 
-<h2 id=input-placeholder>Placeholder Text</h2>
+<h2 id=input-placeholder>Placeholder (textová nápověda)</h2>
 
-<form style="float:right;margin:1.75em"><input placeholder="Your browser supports placeholder text" size=38></form>
+<form style="float:right;margin:1.75em"><input placeholder="Váš prohlížeč podporuje placeholder" size=38></form>
 
-<p>Besides <a href=#input-types>new input types</a>, <abbr>HTML5</abbr> includes several small tweaks to existing forms. One improvement is the ability to set <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-placeholder-attribute>placeholder text in an input field</a>. Placeholder text is displayed inside the input field as long as the field is empty and not focused. As soon you click on (or tab to) the input field, the placeholder text disappears. The <a href=forms.html#placeholder>chapter on web forms</a> has screenshots if you&#8217;re having trouble visualizing it.
+<p>Vedle <a href=#input-types>nových typů značky input</a> přidává <abbr>HTML5</abbr> do formulářů několik menších vylepšení. Jedním z nich je možnost nastavit <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-placeholder-attribute>vlastnost placeholder pro pole input</a>. Tzv. placeholder slouží jako nápověda, jedná se o text, který se zobrazí uvnitř pole input v případě, že je pole prázdné a nemá fokus. Jakmile na pole kliknete (nebo se na ně přemístíte tabulátorem) placeholder zmizí. <a href=forms.html#placeholder>Kapitola o webových formulářích</a> obsahuje screenshoty, pokud si to nedokážete sami představit.
 
-<p>Checking for placeholder support uses <a href=#techniques>detection technique #2</a>. If your browser supports placeholder text in input fields, the <abbr>DOM</abbr> object it creates to represent an <code>&lt;input></code> element will have a <code>placeholder</code> property (even if you don&#8217;t include a <code>placeholder</code> attribute in your <abbr>HTML</abbr>). If your browser doesn&#8217;t support placeholder text, the <abbr>DOM</abbr> object it creates for an <code>&lt;input></code> element will not have a <code>placeholder</code> property.
+<p>Test podpory placeholderu využívá <a href=#techniques>detekční techniku #2</a>. Pokud váš prohlížeč podporuje placeholder v polích input, pak bude mít objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;input></code> vlastnost <code>placeholder</code> (a to i v případě, že jste v <abbr>HTML</abbr> žádný atribut <code>placeholder</code> neuvedli). Pokud váš prohlížeč placeholder nepodporuje, tak objekt <abbr>DOM</abbr> reprezentující prvek <code>&lt;input></code> nebude mít vlastnost <code>placeholder</code>.
 
 <pre><code>function supports_input_placeholder() {
   var i = document.createElement('input');
   return 'placeholder' in i;
 }</code></pre>
 
-<p>Instead of writing this function yourself, you can use <a href=#modernizr>Modernizr</a> (1.1 or later) to detect support for placeholder text.
+<p>Funkci nemusíte psát sami, místo toho můžete použít <a href=#modernizr>Modernizr</a> (1.1 nebo novější), aby detekoval podoru placeholderu.
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for placeholder text
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> otestuj podporu placeholderu
 <pre><code>if (<mark>Modernizr.input.placeholder</mark>) {
-  // your placeholder text should already be visible!
+  // váš placeholder by měl být už viditelný!
 } else {
-  // no placeholder support :(
-  // fall back to a scripted solution
+  // žádná podpora pro placeholder 8-(
+  // spusťme fall back pomocí JavaScriptu
 }</code></pre>
 
 <p class=a>&#x2767;
 
-<h2 id=input-autofocus>Form Autofocus</h2>
+<h2 id=input-autofocus>Autofocus formulářů</h2>
 
-<p class=ss style="width:188px"><img src=i/openclipart.org_johnny_automatic_angry_guy.png alt="angry guy with arms up" width=188 height=262><br><span id="live-input-autofocus"></span>
+<p class=ss style="width:188px"><img src=i/openclipart.org_johnny_automatic_angry_guy.png alt="rozčilený chlap se zvednutýma rukama" width=188 height=262><br><span id="live-input-autofocus"></span>
 
 <p>Web sites can use JavaScript to focus the first input field of a web form automatically. For example, the home page of <a href=http://www.google.com/>Google.com</a> will autofocus the input box so you can type your search keywords without having to position the cursor in the search box. While this is convenient for most people, it can be annoying for power users or people with special needs. If you press the space bar expecting to scroll the page, the page will not scroll because the focus is already in a form input field. (It types a space in the field instead of scrolling.) If you focus a different input field while the page is still loading, the site&#8217;s autofocus script may &#8220;helpfully&#8221; move the focus back to the original input field upon completion, disrupting your flow and causing you to type in the wrong place.
 
@@ -543,9 +543,9 @@ A: Geolocation support is being added to browsers right now, along with support 
 
 <p class=a>&#x2767;
 
-<h2 id=further-reading>Further Reading</h2>
+<h2 id=further-reading>Další čtení</h2>
 
-<p>Specifications and standards:
+<p>Specifikace a stnadardy:
 
 <ul>
 <li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>the <code>&lt;canvas></code> element</a>
@@ -560,7 +560,7 @@ A: Geolocation support is being added to browsers right now, along with support 
 <li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html>Session history and navigation</a>
 </ul>
 
-<p>JavaScript libraries:
+<p>Javascriptové knihovny:
 
 <ul>
 <li><a href=http://www.modernizr.com/>Modernizr</a>, an <abbr>HTML5</abbr> detection library
@@ -568,7 +568,7 @@ A: Geolocation support is being added to browsers right now, along with support 
 <li><a href=https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills><abbr>HTML5</abbr> Cross-browser Polyfills</a>
 </ul>
 
-<p>Other articles and tutorials:
+<p>Dalšá články a návody:
 
 <ul>
 <li><a href=http://camendesign.com/code/video_for_everybody>Video for Everybody!</a>
@@ -580,7 +580,7 @@ A: Geolocation support is being added to browsers right now, along with support 
 
 <p class=a>&#x2767;
 
-<p>This has been &#8220;Detecting <abbr>HTML5</abbr> Features.&#8221; The <a href=table-of-contents.html>full table of contents</a> has more if you&#8217;d like to keep reading.
+<p>Dočetli jste &#8222;Detekujeme podporu <abbr>HTML5</abbr>.&#8221; Pro další čtení přejděte na <a href=table-of-contents.html>celý obsah knihy</a>.
 
 <div class=pf>
 <h4>Did You Know?</h4>

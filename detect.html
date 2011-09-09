@@ -476,69 +476,69 @@ OD: Podpora pro geolokaci je do prohlížečů přidávána právě teď, ve ste
 
 <p class=ss style="width:188px"><img src=i/openclipart.org_johnny_automatic_angry_guy.png alt="rozčilený chlap se zvednutýma rukama" width=188 height=262><br><span id="live-input-autofocus"></span>
 
-<p>Web sites can use JavaScript to focus the first input field of a web form automatically. For example, the home page of <a href=http://www.google.com/>Google.com</a> will autofocus the input box so you can type your search keywords without having to position the cursor in the search box. While this is convenient for most people, it can be annoying for power users or people with special needs. If you press the space bar expecting to scroll the page, the page will not scroll because the focus is already in a form input field. (It types a space in the field instead of scrolling.) If you focus a different input field while the page is still loading, the site&#8217;s autofocus script may &#8220;helpfully&#8221; move the focus back to the original input field upon completion, disrupting your flow and causing you to type in the wrong place.
+<p>Webové stránky mohou používat JavaScript, aby automaticky předali fokus formulářovému poli. Např. titulní stránka  <a href=http://www.google.cz/>Google.cz</a> automaticky předá fokus textovému poli, takže můžete rovnou začít psát váš dotaz aniž byste museli přemisťovat kurzor do vyhledávacího pole. Ačkoliv to většině uživatelů vyhovuje, může to rušit pokročilé uživatele nebo uživatele se specifickými potřebami. Pokud stisknete mezerník a očekáváte odstránkování webové stránky, stránka se neposune, protože fokus je již v textovém poli. (Místo toho prostě napíšete mezeru.) Pokud během načítání stránky vyberete odlišné fomulářové pole, skript stránky stejně ve &#8222;snaze pomoci&#8221; přesune fokus na výchozí formulářové pole a vy tak můžete psát na místo, kam jste psát nechtěli.
 
-<p>Because the autofocusing is done with JavaScript, it can be tricky to handle all of these edge cases, and there is little recourse for people who don&#8217;t want a web page to &#8220;steal&#8221; the focus.
+<p>Jelikož se autofocus řeší JavaScriptem, není jednoduché vyřešit všechny zmíněné případy, a kdo by se zdržoval s uživateli, kteří nechtějí, aby jim webová stránka kradla fokus?
 
-<p>To solve this problem, <abbr>HTML5</abbr> introduces <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control>an <code>autofocus</code> attribute on all web form controls</a>. The <code>autofocus</code> attribute does exactly what it says on the tin: it moves the focus to a particular input field. But because it&#8217;s just markup instead of a script, the behavior will be consistent across all web sites. Also, browser vendors (or extension authors) can offer users a way to disable the autofocusing behavior.
+<p>Jako řešení představilo <abbr>HTML5</abbr> <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control>atribut <code>autofocus</code> pro formulářová pole</a>. Atribut <code>autofocus</code> dělá přesně to, co říká: přemístí fokus na zvolené vstupní pole. Jelikož je vše řešeno na úrovni značkovacího jazyka a nikoliv JavaScriptem, bude toto chování jednotné pro všechn webové stránky. Výrobciprohlížečů (nebo autoři rozšíření) mohou uživatelům nabídnout možnost autofocus vypnout.
 
-<p>Checking for autofocus support uses <a href=#techniques>detection technique #2</a>. If your browser supports autofocusing web form controls, the <abbr>DOM</abbr> object it creates to represent an <code>&lt;input></code> element will have an <code>autofocus</code> property (even if you don&#8217;t include the <code>autofocus</code> attribute in your <abbr>HTML</abbr>). If your browser doesn&#8217;t support autofocusing web form controls, the <abbr>DOM</abbr> object it creates for an <code>&lt;input></code> element will not have an <code>autofocus</code> property. You can detect autofocus support with this function:
+<p>Test podporu autofokusy používá <a href=#techniques>detekční techniku #2</a>. Pokud váš prohlížeč podporuje autofokus webových formulářů, bude mít objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;input></code> vlastnost <code>autofocus</code> (a to i v případě, pokud jste do <abbr>HTML</abbr> atribut <code>autofocus</code> nezapsali). Pokud váš prohlížeč nepodporuje autofokus webových formulářů, objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;input></code> nebude mít vlastnost <code>autofocus</code>. K detekci můžete použít tuto funkci:
 
 <pre><code>function supports_input_autofocus() {
   var i = document.createElement('input');
   return 'autofocus' in i;
 }</code></pre>
 
-<p>Instead of writing this function yourself, you can use <a href=#modernizr>Modernizr</a> (1.1 or later) to detect support for autofocused form fields.
+<p>Funkci nemusíte psát sami, místo toho můžete použít <a href=#modernizr>Modernizr</a> (1.1 nebo novější).
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for autofocus support
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> test podpory autofokusu
 <pre><code>if (<mark>Modernizr.input.autofocus</mark>) {
-  // autofocus works!
+  // autofokus funguje!
 } else {
-  // no autofocus support :(
-  // fall back to a scripted solution
+  // chybí podpora pro autofocus 8-(
+  // zkusme javascriptové řešení
 }</code></pre>
 
 <p class=a>&#x2767;
 
-<h2 id=microdata>Microdata</h2>
+<h2 id=microdata>Mikrodata</h2>
 
-<p class=ss style="width:305px"><img src=i/openclipart.org_johnny_automatic_divider_cards.png alt="alphabetized folders" width=305 height=224><br><span id="live-microdata-api"></span>
+<p class=ss style="width:305px"><img src=i/openclipart.org_johnny_automatic_divider_cards.png alt="kartotéka podle abecedy" width=305 height=224><br><span id="live-microdata-api"></span>
 
-<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#microdata>Microdata</a> is a standardized way to provide additional semantics in your web pages. For example, you can use microdata to declare that a photograph is available under a specific Creative Commons license. As you&#8217;ll see in <a href=extensibility.html>the distributed extensibility chapter</a>, you can use microdata to mark up an &#8220;About Me&#8221; page. Browsers, browser extensions, and search engines can convert your <abbr>HTML5</abbr> microdata markup into a <a href=http://en.wikipedia.org/wiki/VCard>vCard</a>, a standard format for sharing contact information. You can also define your own microdata vocabularies.
+<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#microdata>Mikrodata</a> je standardizovaný způsob pro vkládádí další sémantiky do vašich webových stránek. Můžete např. použít mikrodata pro zdůraznění, že daná fotografie je dostupná pod danou Creative Commons licencí. Jak uvidíte v <a href=extensibility.html>kapitole o distributed extensibility</a>, můžete použít mikrodata k označkování stránky &#8222;O mně&#8221;. Prohlížeče, rozšíření prohlížečů a vyhledávače mohou zkonvertovat <abbr>HTML5</abbr> mikrodata na <a href=http://en.wikipedia.org/wiki/VCard>vCard</a>, což je standardizovaný formát pro sdílení kontaktů. Můžete také definovat své vlastní slovníky pro mikrodata.
 
-<p>The <abbr>HTML5</abbr> microdata standard includes both <abbr>HTML</abbr> markup (primarily for search engines) and a set of <abbr>DOM</abbr> functions (primarily for browsers). There&#8217;s no harm in including microdata markup in your web pages. It&#8217;s nothing more than a few well-placed attributes, and search engines that don&#8217;t understand the microdata attributes will just ignore them. But if you need to access or manipulate microdata through the <abbr>DOM</abbr>, you&#8217;ll need to check whether the browser supports the microdata <abbr>DOM</abbr> <abbr>API</abbr>.
+<p>Standard pro <abbr>HTML5</abbr> mikrodata zahrnuje jak <abbr>HTML</abbr> značkování (zejména pro vyhledávače) tak sadu funkcí <abbr>DOM</abbr> (primárně pro prohlížeče). Použitím mikrodat na vašich webových stránkách nemůžete nic zkazit. Nejedná se o nic víc, než několik správně umístěných atributů; vyhledávače, které mikrodatům nerozumí, je budou prostě ignorovat. Ovšem, pokud potřebujete přistupovat a pracovat s mikrodaty skrze <abbr>DOM</abbr>, musíte napřed otestovat, zda prohlížeč podoruje microdata <abbr>DOM</abbr> <abbr>API</abbr>.
 
-<p>Checking for <abbr>HTML5</abbr> microdata <abbr>API</abbr> support uses <a href=#techniques>detection technique #1</a>. If your browser supports the <abbr>HTML5</abbr> microdata <abbr>API</abbr>, there will be a <code>getItems()</code> function on the global <code>document</code> object. If your browser doesn&#8217;t support microdata, the <code>getItems()</code> function will be undefined.
+<p>Test podpory <abbr>HTML5</abbr> microdata <abbr>API</abbr> používá <a href=#techniques>detekční techniku #1</a>. Pokud váš prohlížeč podporuje <abbr>HTML5</abbr> microdata <abbr>API</abbr>, pak na globálním objektu <code>document</code> bude existovat funkce <code>getItems()</code>. Pokud váš prohlížeč microdata nepodporuje, pak bude funkce <code>getItems()</code> nedefinovaná.
 
 <pre><code>function supports_microdata_api() {
   return !!document.getItems;
 }</code></pre>
 
-<p>Modernizr does not yet support checking for the microdata <abbr>API</abbr>, so you&#8217;ll need to use the function like the one listed above.
+<p>Modernizr zatím ještě neobsahuje detekci podpory pro microdata <abbr>API</abbr>, musíte proto použít funkci napsanou výše.
 
 <p class=a>&#x2767;
 
 <h2 id=history>History <abbr>API</abbr></h2>
 
-<p class=ss style="float:left;margin:0 1.75em 1.75em 0;width:218px"><img src=i/openclipart.org_johnny_automatic_demon_reading_Stewart_Orr.png alt="demon reading book" width=218 height=231><br><span id=live-history-api></span>
+<p class=ss style="float:left;margin:0 1.75em 1.75em 0;width:218px"><img src=i/openclipart.org_johnny_automatic_demon_reading_Stewart_Orr.png alt="démon čtoučí knížku" width=218 height=231><br><span id=live-history-api></span>
 
-<p>The <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html><abbr>HTML5</abbr> history <abbr>API</abbr></a> is a standardized way to manipulate the browser history via script. Part of this <abbr>API</abbr> &mdash; navigating the history &mdash; has been available in previous versions of <abbr>HTML</abbr>. The new part in <abbr>HTML5</abbr> is a way to add entries to the browser history, and respond when those entries are removed from the stack by the user pressing the browser&#8217;s back button. This means that the <abbr>URL</abbr> can continue to do its job as a unique identifier for the current resource, even in script-heavy applications that don&#8217;t ever perform a full page refresh.
+<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html><abbr>HTML5</abbr> history <abbr>API</abbr></a> je standardizovaný způsob manipilace s historií prohlížeče pomocí skriptu. Část tohoto <abbr>API</abbr> &mdash; navigování historií &mdash; byla dostupná v předchozích verzích <abbr>HTML</abbr>. V <abbr>HTML5</abbr> přibyla možnost přidávat nové položky do historie prohlížeče a reagovat, pokud se tlačítkem back prohlížeče změní hladina zásobníku těchto položek- To znamená, že <abbr>URL</abbr> může i nadále sloužit jako jedinečný identifikátor daného zdroje, dokonce i pro komplikovanou javascriptovou aplikaci, která příliš často neprovádí načtení celé nové stránky.
 
-<p>Checking for <abbr>HTML5</abbr> history <abbr>API</abbr> support uses <a href=#techniques>detection technique #1</a>. If your browser supports the <abbr>HTML5</abbr> history <abbr>API</abbr>, there will be a <code>pushState()</code> function on the global <code>history</code> object. If your browser doesn&#8217;t support the history <abbr>API</abbr>, the <code>pushState()</code> function will be undefined.
+<p>Test podpory <abbr>HTML5</abbr> history <abbr>API</abbr> využívá <a href=#techniques>detekční techniku #1</a>. Pokud váš prohlížeč podporuje <abbr>HTML5</abbr> history <abbr>API</abbr>, bude u globálního objektu <code>history</code> existovat funkce <code>pushState()</code>. Pokud váš prohlížeč nepodporuje history <abbr>API</abbr>, nebude funkce <code>pushState()</code> definovaná.
 
 <pre><code>function supports_history_api() {
   return !!(window.history && history.pushState);
 }</code></pre>
 
-<p>Instead of writing this function yourself, you can use <a href=#modernizr>Modernizr</a> (1.6 or later) to detect support for the <abbr>HTML5</abbr> history <abbr>API</abbr>.
+<p>Funkci nemusíte psát sami, místo toho můžete použít <a href=#modernizr>Modernizr</a> (1.6 nebo novější).
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for history <abbr>API</abbr> support
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> test podpory history <abbr>API</abbr>
 <pre><code>if (<mark>Modernizr.history</mark>) {
-  // history management works!
+  // správa historie funguje!
 } else {
-  // no history support :(
-  // fall back to a scripted solution like <a href=https://github.com/balupton/History.js/>History.js</a>
+  // chybí podpora pro history API 8-(
+  // zkusme javascriptové řešení, např. <a href=https://github.com/balupton/History.js/>History.js</a>
 }</code></pre>
 
 <p class=a>&#x2767;

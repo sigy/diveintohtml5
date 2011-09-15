@@ -15,7 +15,7 @@ body{counter-reset:h1 2}
 <p class=a>&#x2767;
 <h2 id=divingin>Jdeme na to</h2>
 
-<p class=f><img src=i/aoc-m.png alt=M width=109 height=105>ohli byste se ptát: &#8222;Jak můžu používat <abbr>HTML5</abbr>, když ho starší prohlížeče nepodporují?&#8221; Ale byla by to zavádějící otázka. <abbr>HTML5</abbr> se skládá z řady částí. Nemůžete proto detekovat, zda prohlížeč &#8222;podporuje <abbr>HTML5</abbr>&#8221;, protože by to nedávalo žádný smysl. Ovšem <em>můžete</em> detekovat podporu jednotlivých částí (vlastností) HTML5, např. zda prohlížeč podporuje canvas, video nebo geolokaci.
+<p class=f><img src=i/aoc-m.png alt=M width=109 height=105>ohli byste se ptát: &#8222;Jak můžu používat <abbr>HTML5</abbr>, když ho starší prohlížeče nepodporují?&#8220; Ale byla by to zavádějící otázka. <abbr>HTML5</abbr> se skládá z řady částí. Nemůžete proto detekovat, zda prohlížeč &#8222;podporuje <abbr>HTML5</abbr>&#8220;, protože by to nedávalo žádný smysl. Ovšem <em>můžete</em> detekovat podporu jednotlivých částí (vlastností) HTML5, např. zda prohlížeč podporuje canvas, video nebo geolokaci.
 
 <p class=a>&#x2767;
 
@@ -78,7 +78,7 @@ body{counter-reset:h1 2}
 
 <p class=ss style="width:300px"><img src=i/openclipart.org_johnny_automatic_fishing_boat.png width=300 height=203 alt="muž rybařící na loďce"><br><span id=live-canvas></span>
 
-<p><abbr>HTML5</abbr> definuje <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>prvek &lt;canvas></a> jako &#8222;na rozlišení závislé plátno, které lze použít pro vykreslení grafů, herní grafiky nebo jiných obrázků <i>za běhu</i>.&#8221; Prvek <dfn>canvas</dfn> vytvoří na vaší stránce obdélník, do kterého můžete JavaScriptem nakreslit, cokoliv si budete přát. <abbr>HTML5</abbr> definuje sadu funkcí (&#8222;the canvas <abbr>API</abbr>&#8221;) pro kreslení tvarů, definování cest, tvorbu gradientů a používání transformací.
+<p><abbr>HTML5</abbr> definuje <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>prvek &lt;canvas></a> jako &#8222;na rozlišení závislé plátno, které lze použít pro vykreslení grafů, herní grafiky nebo jiných obrázků <i>za běhu</i>.&#8220; Prvek <dfn>canvas</dfn> vytvoří na vaší stránce obdélník, do kterého můžete JavaScriptem nakreslit, cokoliv si budete přát. <abbr>HTML5</abbr> definuje sadu funkcí (&#8222;the canvas <abbr>API</abbr>&#8220;) pro kreslení tvarů, definování cest, tvorbu gradientů a používání transformací.
 
 <p>Test podpory canvas <abbr>API</abbr> použivá <a href=#techniques>detekční techniku #2</a>. Pokud váš prohlížeč podporuje canvas <abbr>API</abbr>, pak objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;canvas></code> bude obsahovat <a href=canvas.html#shapes>metodu <code>getContext()</code></a>. Pokud váš pohlížeč canvas <abbr>API</abbr> nepodporuje, tak objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;canvas></code> bude mít pouze sadu běžných vlastností, ovšem žádnou z těch specifických pro canvas.
 
@@ -161,7 +161,7 @@ body{counter-reset:h1 2}
 
 <p>Prvek <code>&lt;video></code> byl navržen tak, aby byl použitelný bez jakéhokoliv detekčního skriptu. Můžete uvést několik video souborů a prohlížeče, které <abbr>HTML5</abbr> video podorují, si z nich vyberou, podle toho, jaké formáty podporují.
 
-(Viz &#8222;A gentle introduction to video encoding&#8221; <a href=http://diveintomark.org/archives/2008/12/18/give-part-1-container-formats>part 1: container formats</a> a <a href=http://diveintomark.org/archives/2008/12/19/give-part-2-lossy-video-codecs>part 2: lossy video codecs</a>, kde se dozvíte víc o rozličných formátech videa.)
+(Viz &#8222;A gentle introduction to video encoding&#8220; <a href=http://diveintomark.org/archives/2008/12/18/give-part-1-container-formats>part 1: container formats</a> a <a href=http://diveintomark.org/archives/2008/12/19/give-part-2-lossy-video-codecs>part 2: lossy video codecs</a>, kde se dozvíte víc o rozličných formátech videa.)
 
 <p>Prohlížeče, které nepodorují <abbr>HTML5</abbr> video, budou prvek <code>&lt;video></code> zcela ignorovat. Toho ovšem můžete využít a nabídnout jim místotoho k přehrání video pomocí pluginu. Kroc Camen sestavil řešení nazvané <a href=http://camendesign.com/code/video_for_everybody>Video for Everybody! (Video pro každého)</a>, které používá <abbr>HTML5</abbr> video tam, kde je to možné, a ve starších prohlížečích využije QuickTime nebo Flash. Krocovo řešení navíc nepoužívá žádný JavaScript a funguje teoreticky ve všech prohlížečích včetně mobilních.
 
@@ -189,11 +189,11 @@ body{counter-reset:h1 2}
 
 <h2 id=video-formats>Formáty videa</h2>
 
-<p>Formáty videa bychom mohli přirovnat k psaným jazykům. Noviny v češtině mohou sdělovat stejnou informaci jako španělské noviny, ovšem pokud umít číst pouze česky, tak vám k něčemu budou pouze ty první. Aby prohlížeč mohl přehrát video, musí rozumět &#8222;jazyku&#8221;, kterým je video napsáno.
+<p>Formáty videa bychom mohli přirovnat k psaným jazykům. Noviny v češtině mohou sdělovat stejnou informaci jako španělské noviny, ovšem pokud umít číst pouze česky, tak vám k něčemu budou pouze ty první. Aby prohlížeč mohl přehrát video, musí rozumět &#8222;jazyku&#8220;, kterým je video napsáno.
 
 <p class=ss style="float:left;margin:0 1.75em 1.75em 0;width:250px"><img src=i/openclipart.org_johnny_automatic_man_reading_newspaper.png alt="muž čtoučí noviny" width=250 height=261><br><span id=live-video-formats></span>
 
-<p>Takový &#8222;jazyk&#8221;, ve kterém je video zapsáno, se nazývá &#8220;kodek&#8221; &mdash; jedná se o algoritmus, podle kterého se video zakóduje do řady bitů. Existuje hromada kodeků, jenže který s nich máme použít? Skutečnost je smutná, prohlížeče se nedokázaly dohodnut na používání jednoho stejného kodeku. Ovšem, alespoň celou tu hromadu kodeků změnšily na pouhé dva. První kodek je placený (platí se licenční poplatky za patenty), ale funguje v <a href=http://www.apple.com/safari/>Safari</a> a na iPhone. (Funguje také ve Flashi, pokud použijete řešení typu <a href=http://camendesign.com/code/video_for_everybody>Video for Everybody!</a>.) Druhý kodek je zdarma a funguje v open source prohlžečích jako je <a href=http://code.google.com/chromium/>Chromium</a> a <a href=http://www.getfirefox.com/>Mozilla Firefox</a>.
+<p>Takový &#8222;jazyk&#8220;, ve kterém je video zapsáno, se nazývá &#8220;kodek&#8220; &mdash; jedná se o algoritmus, podle kterého se video zakóduje do řady bitů. Existuje hromada kodeků, jenže který s nich máme použít? Skutečnost je smutná, prohlížeče se nedokázaly dohodnut na používání jednoho stejného kodeku. Ovšem, alespoň celou tu hromadu kodeků změnšily na pouhé dva. První kodek je placený (platí se licenční poplatky za patenty), ale funguje v <a href=http://www.apple.com/safari/>Safari</a> a na iPhone. (Funguje také ve Flashi, pokud použijete řešení typu <a href=http://camendesign.com/code/video_for_everybody>Video for Everybody!</a>.) Druhý kodek je zdarma a funguje v open source prohlžečích jako je <a href=http://code.google.com/chromium/>Chromium</a> a <a href=http://www.getfirefox.com/>Mozilla Firefox</a>.
 
 <p>Test podpory formátů videa používá <a href=#techniques>detekční techniku #3</a>. Pokud váš prohlížeč podporuje <abbr>HTML5</abbr> video, tak objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;video></code> bude obsahovat metodu <code>canPlayType()</code>. Tato metoda vám řekne, zda prohlížeč podporuje konkrétní formát videa.
 
@@ -213,7 +213,7 @@ body{counter-reset:h1 2}
 
 <pre><code>  var <mark>v</mark> = document.createElement("video");</code></pre>
 
-<p>&#8222;Formát videa&#8221; je ve skutečností kombinací několika věcí. Technicky řečeno se prohlížeče ptáte, zda dokáže přehrát video v H.264 a zvuk v AAC LC, obojí vložené v kontejneru. (Co to všechno znamená si vysvětlíme v <a href=video.html>kapitole o videu</a>. Může vás také zajímat článek <a href=http://diveintomark.org/tag/give>A gentle introduction to video encoding</a>.)
+<p>&#8222;Formát videa&#8220; je ve skutečností kombinací několika věcí. Technicky řečeno se prohlížeče ptáte, zda dokáže přehrát video v H.264 a zvuk v AAC LC, obojí vložené v kontejneru. (Co to všechno znamená si vysvětlíme v <a href=video.html>kapitole o videu</a>. Může vás také zajímat článek <a href=http://diveintomark.org/tag/give>A gentle introduction to video encoding</a>.)
 
 <pre><code>  return v.canPlayType('<mark>video/mp4; codecs="avc1.42E01E, mp4a.40.2"</mark>');</code></pre>
 
@@ -311,7 +311,7 @@ OD: Kdokoliv, kdo má fyzický přístup k počítači by se mohl na data vašeh
 
 <p class=ss style="margin:1.75em"><span id=live-web-workers></span>
 
-<p><a href=http://www.whatwg.org/specs/web-workers/current-work/>Web Workers</a> nabízí standardizovanou cestu, jakou mohou prohlížeče spouštět javascriptový kód na pozadí. S pomocé web workers můžete spustit několik &#8222;vláken&#8221; a ty pak mohou běžet více méně ve stejném čase. (Stačí, když si představíte, že váš počítač dokáže součastně spustit několik aplikací, je to skoro to samé.) Tato &#8222;vlákna na pozadí&#8221; mohou provádět složité matematické výpočty a sítové požadavky nebo přistupovak k <a href=#local-storage>local storage</a> zatímco hlavní webová stránka reaguje na akce uživatele, ať už se jedná o skrolování, klikání nebo psaní.
+<p><a href=http://www.whatwg.org/specs/web-workers/current-work/>Web Workers</a> nabízí standardizovanou cestu, jakou mohou prohlížeče spouštět javascriptový kód na pozadí. S pomocé web workers můžete spustit několik &#8222;vláken&#8220; a ty pak mohou běžet více méně ve stejném čase. (Stačí, když si představíte, že váš počítač dokáže součastně spustit několik aplikací, je to skoro to samé.) Tato &#8222;vlákna na pozadí&#8220; mohou provádět složité matematické výpočty a sítové požadavky nebo přistupovak k <a href=#local-storage>local storage</a> zatímco hlavní webová stránka reaguje na akce uživatele, ať už se jedná o skrolování, klikání nebo psaní.
 
 <p>Test podpory web workers využívá <a href=#techniques>detekční techniku #1</a>. Pokud váš prohlížeč podporuje Web Worker <abbr>API</abbr>, bude u globálního objektu <code>window</code> existovat vlastnost <code>Worker</code>. Pokud váš prohlížeč nepodporuje Web Worker <abbr>API</abbr>, pak bude vlastnost <code>Worker</code> nedefinovaná.
 
@@ -476,7 +476,7 @@ OD: Podpora pro geolokaci je do prohlížečů přidávána právě teď, ve ste
 
 <p class=ss style="width:188px"><img src=i/openclipart.org_johnny_automatic_angry_guy.png alt="rozčilený chlap se zvednutýma rukama" width=188 height=262><br><span id="live-input-autofocus"></span>
 
-<p>Webové stránky mohou používat JavaScript, aby automaticky předali fokus formulářovému poli. Např. titulní stránka  <a href=http://www.google.cz/>Google.cz</a> automaticky předá fokus textovému poli, takže můžete rovnou začít psát váš dotaz aniž byste museli přemisťovat kurzor do vyhledávacího pole. Ačkoliv to většině uživatelů vyhovuje, může to rušit pokročilé uživatele nebo uživatele se specifickými potřebami. Pokud stisknete mezerník a očekáváte odstránkování webové stránky, stránka se neposune, protože fokus je již v textovém poli. (Místo toho prostě napíšete mezeru.) Pokud během načítání stránky vyberete odlišné fomulářové pole, skript stránky stejně ve &#8222;snaze pomoci&#8221; přesune fokus na výchozí formulářové pole a vy tak můžete psát na místo, kam jste psát nechtěli.
+<p>Webové stránky mohou používat JavaScript, aby automaticky předali fokus formulářovému poli. Např. titulní stránka  <a href=http://www.google.cz/>Google.cz</a> automaticky předá fokus textovému poli, takže můžete rovnou začít psát váš dotaz aniž byste museli přemisťovat kurzor do vyhledávacího pole. Ačkoliv to většině uživatelů vyhovuje, může to rušit pokročilé uživatele nebo uživatele se specifickými potřebami. Pokud stisknete mezerník a očekáváte odstránkování webové stránky, stránka se neposune, protože fokus je již v textovém poli. (Místo toho prostě napíšete mezeru.) Pokud během načítání stránky vyberete odlišné fomulářové pole, skript stránky stejně ve &#8222;snaze pomoci&#8220; přesune fokus na výchozí formulářové pole a vy tak můžete psát na místo, kam jste psát nechtěli.
 
 <p>Jelikož se autofocus řeší JavaScriptem, není jednoduché vyřešit všechny zmíněné případy, a kdo by se zdržoval s uživateli, kteří nechtějí, aby jim webová stránka kradla fokus?
 
@@ -505,7 +505,7 @@ OD: Podpora pro geolokaci je do prohlížečů přidávána právě teď, ve ste
 
 <p class=ss style="width:305px"><img src=i/openclipart.org_johnny_automatic_divider_cards.png alt="kartotéka podle abecedy" width=305 height=224><br><span id="live-microdata-api"></span>
 
-<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#microdata>Mikrodata</a> je standardizovaný způsob pro vkládádí další sémantiky do vašich webových stránek. Můžete např. použít mikrodata pro zdůraznění, že daná fotografie je dostupná pod danou Creative Commons licencí. Jak uvidíte v <a href=extensibility.html>kapitole o distributed extensibility</a>, můžete použít mikrodata k označkování stránky &#8222;O mně&#8221;. Prohlížeče, rozšíření prohlížečů a vyhledávače mohou zkonvertovat <abbr>HTML5</abbr> mikrodata na <a href=http://en.wikipedia.org/wiki/VCard>vCard</a>, což je standardizovaný formát pro sdílení kontaktů. Můžete také definovat své vlastní slovníky pro mikrodata.
+<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#microdata>Mikrodata</a> je standardizovaný způsob pro vkládádí další sémantiky do vašich webových stránek. Můžete např. použít mikrodata pro zdůraznění, že daná fotografie je dostupná pod danou Creative Commons licencí. Jak uvidíte v <a href=extensibility.html>kapitole o distributed extensibility</a>, můžete použít mikrodata k označkování stránky &#8222;O mně&#8220;. Prohlížeče, rozšíření prohlížečů a vyhledávače mohou zkonvertovat <abbr>HTML5</abbr> mikrodata na <a href=http://en.wikipedia.org/wiki/VCard>vCard</a>, což je standardizovaný formát pro sdílení kontaktů. Můžete také definovat své vlastní slovníky pro mikrodata.
 
 <p>Standard pro <abbr>HTML5</abbr> mikrodata zahrnuje jak <abbr>HTML</abbr> značkování (zejména pro vyhledávače) tak sadu funkcí <abbr>DOM</abbr> (primárně pro prohlížeče). Použitím mikrodat na vašich webových stránkách nemůžete nic zkazit. Nejedná se o nic víc, než několik správně umístěných atributů; vyhledávače, které mikrodatům nerozumí, je budou prostě ignorovat. Ovšem, pokud potřebujete přistupovat a pracovat s mikrodaty skrze <abbr>DOM</abbr>, musíte napřed otestovat, zda prohlížeč podoruje microdata <abbr>DOM</abbr> <abbr>API</abbr>.
 
@@ -580,13 +580,13 @@ OD: Podpora pro geolokaci je do prohlížečů přidávána právě teď, ve ste
 
 <p class=a>&#x2767;
 
-<p>Dočetli jste &#8222;Detekujeme podporu <abbr>HTML5</abbr>.&#8221; Pro další čtení přejděte na <a href=table-of-contents.html>celý obsah knihy</a>.
+<p>Dočetli jste &#8222;Detekujeme podporu <abbr>HTML5</abbr>.&#8220; Pro další čtení přejděte na <a href=table-of-contents.html>celý obsah knihy</a>.
 
 <div class=pf>
 <h4>Did You Know?</h4>
 <div class=moneybags>
-<blockquote><p>In association with Google Press, O&#8217;Reilly is distributing this book in a variety of formats, including paper, ePub, Mobi, and <abbr>DRM</abbr>-free <abbr>PDF</abbr>. The paid edition is called &#8220;HTML5: Up &amp; Running,&#8221; and it is available now. This chapter is included in the paid edition.
-<p>If you liked this chapter and want to show your appreciation, you can <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">buy &#8220;HTML5: Up &amp; Running&#8221; with this affiliate link</a> or <a href=http://oreilly.com/catalog/9780596806033>buy an electronic edition directly from O&#8217;Reilly</a>. You&#8217;ll get a book, and I&#8217;ll get a buck. I do not currently accept direct donations.
+<blockquote><p>In association with Google Press, O&#8217;Reilly is distributing this book in a variety of formats, including paper, ePub, Mobi, and <abbr>DRM</abbr>-free <abbr>PDF</abbr>. The paid edition is called &#8220;HTML5: Up &amp; Running,&#8220; and it is available now. This chapter is included in the paid edition.
+<p>If you liked this chapter and want to show your appreciation, you can <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">buy &#8220;HTML5: Up &amp; Running&#8220; with this affiliate link</a> or <a href=http://oreilly.com/catalog/9780596806033>buy an electronic edition directly from O&#8217;Reilly</a>. You&#8217;ll get a book, and I&#8217;ll get a buck. I do not currently accept direct donations.
 </blockquote>
 </div>
 </div>

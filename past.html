@@ -49,35 +49,35 @@ body{counter-reset:h1 1}
 
 <p>Víte, proč v <abbr>HTML</abbr> existuje prvek <code>&lt;img></code>? Takovou otázku neslyšíte každý den. Pochopitelně ho <em>někdo</em> musel vytvořit. Takové věci se neobjeví jen tak samy od sebe. Každý prvek, každý atribut, každá vlastnost <abbr>HTML</abbr>, kterou jste kdy použili &mdash; někdo je musel vytvořit, musel rozhodnout, jak mají fungovat a všechno to sepsat. Nebyl to žádný bůh, ale člověk a ti nejsou bezchybní. Jsou to prostě lidé. Chytří lidé, určitě. Ale jen lidé.
 
-<p>One of the great things about standards that are developed &#8222;out in the open&#8220; is that you can go back in time and answer these kinds of questions. Discussions occur on mailing lists, which are usually archived and publicly searchable. So I decided to do a bit of &#8222;email archaeology&#8220; to try to answer the question, &#8222;Why do we have an <code>&lt;img></code> element?&#8220; I had to go back to before there was an organization called the World Wide Web Consortium (<abbr>W3C</abbr>). I went back to the earliest days of the web, when you could count the number of web servers with both hands and maybe a couple of toes.
+<p>U standardů, které jsou vytvářeny &#8222;veřejně&#8220;, můžete na podobné otázky snadno odpovědět. Stačí ze zpětně podívat do jednotlivých debat, které se odehrávali v mailing listech, jenž byly obvykle archivovány a jsou veřejně prohledatelné. Rozhodl jsem se pustit se do trochy té &#8222;e-mailové archeologie&#8220;, abych odpověděl na otázku, &#8222;Proč v <abbr>HTML</abbr> existuje prvek <code>&lt;img></code>?&#8220; Musel jsem se vrátit do doby ještě před tím, než tu byla organizace World Wide Web Consortium (<abbr>W3C</abbr>). Vrátil jsem se až do těch prvních dnů webu, kdy jste ještě mohli počet webových serverů spočítat na prstech rukou.
 
-<p><i>(There are a number of typographical errors in the following quotes. I have decided to leave them intact for historical accuracy.)</i>
+<p><i>(V následujících citacích najdete několik typografických chyb. Rozhodl jsem se je ponechat neopravené, abych zachoval autenticitu textu.)</i>
 
-<p>On February 25, 1993, <a href="http://1997.webhistory.org/www.lists/www-talk.1993q1/0182.html"><cite>Marc Andreessen</cite> wrote</a>: 
+<p>25. února 1993 napsal <a href="http://1997.webhistory.org/www.lists/www-talk.1993q1/0182.html"><cite>Marc Andreessen</cite></a>: 
  
 <blockquote cite="http://1997.webhistory.org/www.lists/www-talk.1993q1/0182.html"> 
-<p>I&#8217;d like to propose a new, optional HTML tag: 
+<p>Chtěl bych navrnout novou, nepovinnou značku HTML: 
 <p>IMG 
-<p>Required argument is <code>SRC="url"</code>.  
-<p>This names a bitmap or pixmap file for the browser to attempt to pull over the network and interpret as an image, to be embedded in the text at the point of the tag&#8217;s occurrence. 
-<p>An example is:
+<p>Jejím povinným parametrem je <code>SRC="url"</code>.  
+<p>Jedná se o název bitmapového nebo pixmapového souboru, který se prohlížeč pokusí ze sítě stáhnout, interpretovat ho jako obrázek a ten vložit do textu na místo výskytu této značky.
+<p>Příklad:
 <p><code>&lt;IMG SRC="file://foobar.com/foo/bar/blargh.xbm"></code> 
-<p>(There is no closing tag; this is just a standalone tag.) 
-<p>This tag can be embedded in an anchor like anything else; when that happens, it becomes an icon that&#8217;s sensitive to activation just like a regular text anchor. 
-<p>Browsers should be afforded flexibility as to which image formats they support. Xbm and Xpm are good ones to support, for example. If a browser cannot interpret a given format, it can do whatever it wants instead (X Mosaic will pop up a default bitmap as a placeholder). 
-<p>This is required functionality for X Mosaic; we have this working, and we&#8217;ll at least be using it internally. I&#8217;m certainly open to suggestions as to how this should be handled within HTML; if you have a better idea than what I&#8217;m presenting now, please let me know. I know this is hazy wrt image format, but I don&#8217;t see an alternative than to just say &#8222;let the browser do what it can&#8220; and wait for the perfect solution to come along (MIME, someday, maybe). 
+<p>(Není tu žádná ukončovací značka, jen ta zahajovací.) 
+<p>Tuto značku můžete vložit do odkazu stejně jako cokoliv jiného; v takovém případě se stane ikonou, kterou je možné aktivovat stejně jako obyčejný textový odkaz. 
+<p>Prohlížečům by měly mít možnost se rozhodnout, které formáty obrázků budou podporovat. Xbm a Xpm jsou například dobrými kandidáty na podporu. Pokud prohlížeč nedokáže daný formát zobrazit, může s ním provést, co chce (X Mosaic například na jeho misto zobrazí výchozí bitmapu).
+<p>Toto je požadovaná pro X Mosaic; už jsme ji implementovali a budeme ji využívat přinejmenším pro interně. Jsem rozhodně otevřený vašim návrhům k zařazení do HTML; pokud máte lepší nápad, než který tu prezentuji, dejte mi prosím vědět. Já vím, že otázka formátů obrázků je nejasná, ale nevidím jinou možnost, než říct &#8222;ať prohlížeč udělá, co umí&#8220; a počkat, že se časem objeví ideální řešení (MIME jednoho dne, možná).
 </blockquote> 
  
-<p><a href="http://en.wikipedia.org/wiki/X_BitMap">Xbm</a> and <a href="http://en.wikipedia.org/wiki/X_PixMap">Xpm</a> were popular graphics formats on Unix systems. 
+<p><a href="http://en.wikipedia.org/wiki/X_BitMap">Xbm</a> a <a href="http://en.wikipedia.org/wiki/X_PixMap">Xpm</a> byly populární grafické formáty unixových systémů. 
  
-<p>&#8222;Mosaic&#8220; was one of the earliest web browsers. (&#8222;X Mosaic&#8220; was the version that ran on Unix systems.) When he wrote this message in early 1993, <a href="http://en.wikipedia.org/wiki/Marc_Andreessen">Marc Andreessen</a> had not yet founded the company that made him famous, <a href="http://en.wikipedia.org/wiki/Mosaic_Communications_Corporation">Mosaic Communications Corporation</a>, nor had he started work on that company&#8217;s flagship product, &#8222;Mosaic Netscape.&#8220; (You may know them better by their later names, &#8222;Netscape Corporation&#8220; and &#8222;Netscape Navigator.&#8220;) 
+<p>&#8222;Mosaic&#8220; byl jeden z prvních prohlížečů. (&#8222;X Mosaic&#8220; byla verze, která běžela na Unixu.) Když <a href="http://en.wikipedia.org/wiki/Marc_Andreessen">Marc Andreessen</a> začátkem roku 1993 tuhle zprávu psal, bylo to ještě před tím, než založil společnost <a href="http://en.wikipedia.org/wiki/Mosaic_Communications_Corporation">Mosaic Communications Corporation</a>, která ho proslavila, i před tím, než začal pracovat na stěžejním produktu této společnosti &#8222;Mosaic Netscape.&#8220; (Můžete je spíš znát pod jejich pozdějšími názvy &#8222;Netscape Corporation&#8220; a &#8222;Netscape Navigator.&#8220;)
  
-<p>&#8222;MIME, someday, maybe&#8220; is a reference to <a href="http://en.wikipedia.org/wiki/Content_negotiation">content negotiation</a>, a feature of HTTP where a client (like a web browser) tells the server (like a web server) what types of resources it supports (like <code>image/jpeg</code>) so the server can return something in the client&#8217;s preferred format. <a href="http://www.w3.org/Protocols/HTTP/AsImplemented.html">The Original HTTP as defined in 1991</a> (the only version that was implemented in February 1993) did not have a way for clients to tell servers what kinds of images they supported, thus the design dilemma that Marc faced. 
+<p>&#8222;MIME jednoho dne, možná&#8220; naráží na <a href="http://en.wikipedia.org/wiki/Content_negotiation">content negotiation</a>, vlastnost HTTP, pomocí které může klient (např. webový prohlížeč) oznámit serveru (např. webovému serveru) jaké typy obsahu podporuje (např. <code>image/jpeg</code>), takže server může vrátit obsah v klientem preferovaném formátu. <a href="http://www.w3.org/Protocols/HTTP/AsImplemented.html">Původní HTTP definované v 1991</a> (jediná verze HTTP, která byla v únoru 1993 implementované) nenabízela klientům možnost, jak říct serveru, jaké formáty obrázků podporují, to bylo dilema, kterému Marc ve svém návrhu čelil. 
  
-<p>A few hours later, <a href="http://1997.webhistory.org/www.lists/www-talk.1993q1/0183.html"><cite>Tony Johnson</cite> replied</a>: 
+<p>O několik hodin později <a href="http://1997.webhistory.org/www.lists/www-talk.1993q1/0183.html"><cite>Tony Johnson</cite> odpověděl</a>: 
  
 <blockquote cite="http://1997.webhistory.org/www.lists/www-talk.1993q1/0183.html"> 
-<p>I have something very similar in Midas 2.0 (in use here at SLAC, and due for public release any week now), except that all the names are different, and it has an extra argument <code>NAME="name"</code>. It has almost exactly the same functionality as your proposed <code>IMG</code> tag. e.g. 
+<p>Mám něco velmi podobného pro Midas 2.0 (u sebe na SLACu, veřejná verze přijde každýn týdnem), až na rozdíly v názvech. A mám také navíc parametr <code>NAME="name"</code>. Má téměr stejnou funkčnost jako značka <code>IMG</code>, kterou navrhuješ, tj. 
 <p><code>&lt;ICON name="NoEntry" href="http://note/foo/bar/NoEntry.xbm"></code> 
 <p>The idea of the name parameter was to allow the browser to have a set of &#8222;built in&#8220; images. If the name matches a &#8222;built in&#8220; image it would use that instead of having to go out and fetch the image. The name could also act as a hint for &#8222;line mode&#8220; browsers as to what kind of a symbol to put in place of the image. 
 <p>I don&#8217;t much care about the parameter or tag names, but it would be sensible if we used the same things. I don&#8217;t much care for abbreviations, ie why not <code>IMAGE=</code> and <code>SOURCE=</code>. I somewhat prefer <code>ICON</code> since it imlies that the <code>IMAGE</code> should be smallish, but maybe <code>ICON</code> is an overloaded word? 

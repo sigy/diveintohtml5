@@ -18,10 +18,10 @@ body{counter-reset:h1 1}
 <p class=f><img src=i/aoc-n.png alt=N width=107 height=103>edávno jsem narazil na citaci vývojáře Mozilly <a href=http://lists.w3.org/Archives/Public/public-html/2010Jan/0107.html>týkající se napětí přítomného u vytváření standardů</a>:
 
 <blockquote cite=http://lists.w3.org/Archives/Public/public-html/2010Jan/0107.html>
-<p>Implementace a specifikace spolu navzájem tančí v těsném spojení. Nechceme, aby se implementace objevily dřív, než budou specifikace hotové, protože lidé začli být závislí na detailech implementací, což by omezovalo vznikající specifikace. Ovšem současně nechceme, aby specifikace byly dokončeny před tím, než se objeví implementace a zkušenosti uživatelů s nimi, protože potřebujeme znát jejich zpětnou vazbu. Jedná se o napětí, kterému se nedá vyhnout, musíme se skrz něj prodrat.
+<p>Implementace a specifikace spolu navzájem tančí v těsném spojení. Nechceme, aby se implementace objevily dřív, než budou specifikace hotové, protože lidé začali být závislí na detailech implementací, což by omezovalo vznikající specifikace. Ovšem současně nechceme, aby specifikace byly dokončeny před tím, než se objeví implementace a zkušenosti uživatelů s nimi, protože potřebujeme znát jejich zpětnou vazbu. Jedná se o napětí, kterému se nedá vyhnout, musíme se skrz něj prodrat.
 </blockquote>
 
-<p>Mějte na paměti tuhle citaci zatímco budu popisovat, jak <abbr>HTML5</abbr> vzniklo.
+<p>Mějte na paměti tuto citaci zatímco budu popisovat, jak <abbr>HTML5</abbr> vzniklo.
 
 <p class=c><img src=i/openclipart.org_johnny_automatic_animals_on_see_saw.png width=526 height=116 alt="zvířata na houpačce">
 
@@ -29,15 +29,15 @@ body{counter-reset:h1 1}
 
 <h2 id=mime-types>MIME type</h2>
 
-<p>Tahle kniha pojednává o <abbr>HTML5</abbr>, nikoliv o předchozích verzích <abbr>HTML</abbr>, ani o žádné verzi <abbr>XHTML</abbr>. Ovšem pokud máte pochopit historii <abbr>HTML5</abbr> a motivaci stojící za jeho vznikem, musíte napřed porozumět několika technickým detailům. Konkrétně <abbr>MIME</abbr> typům.
+<p>Tahle kniha pojednává o <abbr>HTML5</abbr>, nikoliv o předchozích verzích <abbr>HTML</abbr> nebo nějaké verzi <abbr>XHTML</abbr>. Ovšem pokud máte pochopit historii <abbr>HTML5</abbr> a motivaci stojící za jeho vznikem, musíte napřed porozumět několika technickým detailům. Konkrétně <abbr>MIME</abbr> typům.
 
-<p>Pokaždé, když váš webový prohlížeč požádá o stránku, pošle mu webový server ještě před vlastním obsahem stránky tzv. &#8222;hlavičky&#8220;. Tyto hlavičky jsou běžně neviditelné (můžete si je zobrazit pomocí vývojářských nástrojů, pokud chcete), ale důležité, protože řikají prohlížeči, jak má interpretovat značkovací jazyk, který následuje. Nejdůležitější hlavičkou je <code>Content-Type</code>, vypadá takto:
+<p>Pokaždé, když váš webový prohlížeč požádá o stránku, pošle mu webový server ještě před vlastním obsahem stránky tzv. &#8222;hlavičky&#8220;. Tyto hlavičky jsou běžně neviditelné (pokud chcete, můžete si je zobrazit pomocí vývojářských nástrojů), ale důležité, protože řikají prohlížeči, jak má interpretovat značkovací jazyk, který následuje. Nejdůležitější hlavičkou je <code>Content-Type</code>, která vypadá takto:
 
 <blockquote><pre>Content-Type: text/html</pre></blockquote>
 
 <p>&#8222;<code>text/html</code>&#8220; je název pro &#8222;content type&#8220; neboli &#8222;<abbr>MIME</abbr> typ&#8220; stránky. Tato hlavička je tím <strong>jediným</strong> způsobem, který udává, o jaká data se doopravdy jedná, což určí, jak je má prohlížeč zobrazit. Obrázky mají své vlastní <abbr>MIME</abbr> typy (<code>image/jpeg</code> pro <abbr>JPEG</abbr>, <code>image/png</code> pro <abbr>PNG</abbr> atd.). Javascriptové soubory mají svůj vlastní <abbr>MIME</abbr> typ. Kaskádové styly mají svůj vlastní <abbr>MIME</abbr> typ. Všechno má svůj vlastní <abbr>MIME</abbr> type. Celý web stojí na <abbr>MIME</abbr> typech.
 
-<p>Ve skutečnosti je to ovšem mnohem složitější. První generace webových serverů (mám na mysli webové servery z roku 1993) neposílala hlavičku <code>Content-Type</code>, protože ta tehdy ještě neexistovala. (Byla vynalezena až roku 1994.) Z důvodů kompatibility, které sahají až do roku 1993, některé populární webové prohlížeče hlavičku <code>Content-Type</code> za jistých okolností ignorovaly. (Říká se tomu &#8222;content sniffing&#8220; &mdash; &#8222;očuchávání obsahu&#8220;.) Ovšem odahem vše, co se tehdy vyskytovalo na webu &mdash; <abbr>HTML</abbr> stránky, obrázky, skripty, videa, PDF souborů, zkrátka cokolic, co mělo vlastní <abbr>URL</abbr> &mdash; bylo nabízeno s nějakým specifickým <abbr>MIME</abbr> typem v hlavičce <code>Content-Type</code>.
+<p>Ve skutečnosti je to ovšem mnohem složitější. První generace webových serverů (mám na mysli webové servery z roku 1993) neposílala hlavičku <code>Content-Type</code>, protože ta tehdy ještě neexistovala. (Byla vytvořena až roku 1994.) Z důvodů kompatibility, které sahají až do roku 1993, některé populární webové prohlížeče hlavičku <code>Content-Type</code> za jistých okolností ignorovaly. (Říká se tomu &#8222;content sniffing&#8220; &mdash; &#8222;očuchávání obsahu&#8220;.) Ovšem odhadem vše, co se tehdy vyskytovalo na webu &mdash; <abbr>HTML</abbr> stránky, obrázky, skripty, videa, PDF souborů, zkrátka cokoliv, co mělo vlastní <abbr>URL</abbr> &mdash; bylo nabízeno s nějakým specifickým <abbr>MIME</abbr> typem v hlavičce <code>Content-Type</code>.
 
 <p>Dobře si to zapamatujte, ještě se k tomu vrátíme.
 
@@ -47,9 +47,9 @@ body{counter-reset:h1 1}
 
 <p class=ss><img src=i/openclipart.org_johnny_automatic_monkey_reading.png width=365 height=396 alt="opička čtoucí knížku">
 
-<p>Víte, proč v <abbr>HTML</abbr> existuje prvek <code>&lt;img></code>? Takovou otázku neslyšíte každý den. Pochopitelně ho <em>někdo</em> musel vytvořit. Takové věci se neobjeví jen tak samy od sebe. Každý prvek, každý atribut, každá vlastnost <abbr>HTML</abbr>, kterou jste kdy použili &mdash; někdo je musel vytvořit, musel rozhodnout, jak mají fungovat a všechno to sepsat. Nebyl to žádný bůh, ale člověk a ti nejsou bezchybní. Jsou to prostě lidé. Chytří lidé, určitě. Ale jen lidé.
+<p>Víte, proč v <abbr>HTML</abbr> existuje prvek <code>&lt;img></code>? Takovou otázku neslyšíte každý den. Pochopitelně ho <em>někdo</em> musel vytvořit. Takové věci se neobjeví jen tak samy od sebe. Každý prvek, každý atribut, každá vlastnost <abbr>HTML</abbr>, kterou jste kdy použili &mdash; někdo je musel vytvořit, musel rozhodnout, jak mají fungovat a všechno to sepsat. Nebyl to žádný bůh, ale člověk a ti nejsou bezchybní. Jsou to prostě lidé. Určitě chytří lidé. Ale jen lidé.
 
-<p>U standardů, které jsou vytvářeny &#8222;veřejně&#8220;, můžete na podobné otázky snadno odpovědět. Stačí ze zpětně podívat do jednotlivých debat, které se odehrávali v mailing listech, jenž byly obvykle archivovány a jsou veřejně prohledatelné. Rozhodl jsem se pustit se do trochy té &#8222;e-mailové archeologie&#8220;, abych odpověděl na otázku, &#8222;Proč v <abbr>HTML</abbr> existuje prvek <code>&lt;img></code>?&#8220; Musel jsem se vrátit do doby ještě před tím, než tu byla organizace World Wide Web Consortium (<abbr>W3C</abbr>). Vrátil jsem se až do těch prvních dnů webu, kdy jste ještě mohli počet webových serverů spočítat na prstech rukou.
+<p>U standardů, které jsou vytvářeny &#8222;veřejně&#8220;, můžete na podobné otázky snadno odpovědět. Stačí ze zpětně podívat do jednotlivých debat, které se odehrávaly v mailing listech, jenž byly obvykle archivovány a jsou veřejně prohledatelné. Rozhodl jsem se pustit se do trochy té &#8222;e-mailové archeologie&#8220;, abych odpověděl na otázku, &#8222;Proč v <abbr>HTML</abbr> existuje prvek <code>&lt;img></code>?&#8220; Musel jsem se vrátit do doby ještě před tím, než tu byla organizace World Wide Web Consortium (<abbr>W3C</abbr>). Vrátil jsem se až do těch prvních dnů webu, kdy jste ještě mohli počet webových serverů spočítat na prstech rukou.
 
 <p><i>(V následujících citacích najdete několik typografických chyb. Rozhodl jsem se je ponechat neopravené, abych zachoval autenticitu textu.)</i>
 
@@ -64,7 +64,7 @@ body{counter-reset:h1 1}
 <p><code>&lt;IMG SRC="file://foobar.com/foo/bar/blargh.xbm"></code> 
 <p>(Není tu žádná ukončovací značka, jen ta zahajovací.) 
 <p>Tuto značku můžete vložit do odkazu stejně jako cokoliv jiného; v takovém případě se stane ikonou, kterou je možné aktivovat stejně jako obyčejný textový odkaz. 
-<p>Prohlížečům by měly mít možnost se rozhodnout, které formáty obrázků budou podporovat. Xbm a Xpm jsou například dobrými kandidáty na podporu. Pokud prohlížeč nedokáže daný formát zobrazit, může s ním provést, co chce (X Mosaic například na jeho misto zobrazí výchozí bitmapu).
+<p>Prohlížečům by měly mít možnost se rozhodnout, které formáty obrázků budou podporovat. Například Xbm a Xpm jsou  pro to dobrými kandidáty. Pokud prohlížeč nedokáže daný formát zobrazit, může s ním provést, co chce (X Mosaic například na jeho misto zobrazí výchozí bitmapu).
 <p>Toto je požadovaná pro X Mosaic; už jsme ji implementovali a budeme ji využívat přinejmenším pro interně. Jsem rozhodně otevřený vašim návrhům k zařazení do HTML; pokud máte lepší nápad, než který tu prezentuji, dejte mi prosím vědět. Já vím, že otázka formátů obrázků je nejasná, ale nevidím jinou možnost, než říct &#8222;ať prohlížeč udělá, co umí&#8220; a počkat, že se časem objeví ideální řešení (MIME jednoho dne, možná).
 </blockquote> 
  

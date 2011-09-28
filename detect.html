@@ -144,7 +144,7 @@ body{counter-reset:h1 2}
 
 <p>Funkci nemusíte psát sami, místo toho můžete použít <a href=#modernizr>Modernizr</a>, aby detekoval canvas text <abbr>API</abbr> za vás.
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for canvas text support
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> zkusíme, zda canvas podporuje práci s textem
 <pre><code>if (<mark>Modernizr.canvastext</mark>) {
   // honem něco napíšeme!
 } else {
@@ -163,9 +163,9 @@ body{counter-reset:h1 2}
 
 (Viz &#8222;A gentle introduction to video encoding&#8220; <a href=http://diveintomark.org/archives/2008/12/18/give-part-1-container-formats>part 1: container formats</a> a <a href=http://diveintomark.org/archives/2008/12/19/give-part-2-lossy-video-codecs>part 2: lossy video codecs</a>, kde se dozvíte víc o rozličných formátech videa.)
 
-<p>Prohlížeče, které nepodorují <abbr>HTML5</abbr> video, budou prvek <code>&lt;video></code> zcela ignorovat. Toho ovšem můžete využít a nabídnout jim místotoho k přehrání video pomocí pluginu. Kroc Camen sestavil řešení nazvané <a href=http://camendesign.com/code/video_for_everybody>Video for Everybody! (Video pro každého)</a>, které používá <abbr>HTML5</abbr> video tam, kde je to možné, a ve starších prohlížečích využije QuickTime nebo Flash. Krocovo řešení navíc nepoužívá žádný JavaScript a funguje teoreticky ve všech prohlížečích včetně mobilních.
+<p>Prohlížeče, které nepodporují <abbr>HTML5</abbr> video, budou prvek <code>&lt;video></code> zcela ignorovat. Toho ovšem můžete využít a nabídnout jim místo toho k přehrání video pomocí pluginu. Kroc Camen sestavil řešení nazvané <a href=http://camendesign.com/code/video_for_everybody>Video for Everybody! (Video pro každého)</a>, které používá <abbr>HTML5</abbr> video tam, kde je to možné, a ve starších prohlížečích využije QuickTime nebo Flash. Krocovo řešení navíc nepoužívá žádný JavaScript a funguje teoreticky ve všech prohlížečích včetně mobilních.
 
-<p>Pokud chcete s videem dělat víc, než jen ho umístit na stránku a přehrát, musíte už použít JavaScript. Test podpory videa využívá <a href=#techniques>detekční techniku #2</a>. Pokud váš prohlížeč podporuje <abbr>HTML5</abbr> video, tak objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;video></code> bude obsahovat metodu <code>canPlayType()</code>. Pokud váš prohlížeč nepodporuje <abbr>HTML5</abbr> video, tak objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;video></code> bude mít pouze sadu vlastností běžných pro všechny prvky HTML. Podporu videa můžete otestovat touto funkcí:
+<p>Pokud chcete s videem dělat víc, než ho jen umístit na stránku a přehrát, musíte už použít JavaScript. Test podpory videa využívá <a href=#techniques>detekční techniku #2</a>. Pokud váš prohlížeč podporuje <abbr>HTML5</abbr> video, tak objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;video></code> bude obsahovat metodu <code>canPlayType()</code>. Pokud váš prohlížeč nepodporuje <abbr>HTML5</abbr> video, tak objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;video></code> bude mít pouze sadu vlastností běžných pro všechny prvky HTML. Podporu videa můžete otestovat touto funkcí:
 
 <pre><code>function supports_video() {
   return !!document.createElement('video').canPlayType;
@@ -191,7 +191,7 @@ body{counter-reset:h1 2}
 
 <p>Formáty videa bychom mohli přirovnat k psaným jazykům. Noviny v češtině mohou sdělovat stejnou informaci jako španělské noviny, ovšem pokud umít číst pouze česky, tak vám k něčemu budou pouze ty první. Aby prohlížeč mohl přehrát video, musí rozumět &#8222;jazyku&#8220;, kterým je video napsáno.
 
-<p class=ss style="float:left;margin:0 1.75em 1.75em 0;width:250px"><img src=i/openclipart.org_johnny_automatic_man_reading_newspaper.png alt="muž čtoučí noviny" width=250 height=261><br><span id=live-video-formats></span>
+<p class=ss style="float:left;margin:0 1.75em 1.75em 0;width:250px"><img src=i/openclipart.org_johnny_automatic_man_reading_newspaper.png alt="muž čtoucí noviny" width=250 height=261><br><span id=live-video-formats></span>
 
 <p>Takový &#8222;jazyk&#8220;, ve kterém je video zapsáno, se nazývá &#8220;kodek&#8220; &mdash; jedná se o algoritmus, podle kterého se video zakóduje do řady bitů. Existuje hromada kodeků, jenže který s nich máme použít? Skutečnost je smutná, prohlížeče se nedokázaly dohodnut na používání jednoho stejného kodeku. Ovšem, alespoň celou tu hromadu kodeků změnšily na pouhé dva. První kodek je placený (platí se licenční poplatky za patenty), ale funguje v <a href=http://www.apple.com/safari/>Safari</a> a na iPhone. (Funguje také ve Flashi, pokud použijete řešení typu <a href=http://camendesign.com/code/video_for_everybody>Video for Everybody!</a>.) Druhý kodek je zdarma a funguje v open source prohlžečích jako je <a href=http://code.google.com/chromium/>Chromium</a> a <a href=http://www.getfirefox.com/>Mozilla Firefox</a>.
 
@@ -209,7 +209,7 @@ body{counter-reset:h1 2}
 
 <pre><code>  if (<mark>!supports_video()</mark>) { return false; }</code></pre>
 
-<p>Po té funce vytvoří prázný prvek <code>&lt;video></code> (ovšem nevloží ho do stránky, takže nebude viditelný) a zavolá metodu <code>canPlayType()</code>. Ta musí existovat, protože to již ověřila funkce <code>supports_video()</code>.
+<p>Po té funkce vytvoří prázný prvek <code>&lt;video></code> (ovšem nevloží ho do stránky, takže nebude viditelný) a zavolá metodu <code>canPlayType()</code>. Ta musí existovat, protože to již ověřila funkce <code>supports_video()</code>.
 
 <pre><code>  var <mark>v</mark> = document.createElement("video");</code></pre>
 
@@ -225,7 +225,7 @@ body{counter-reset:h1 2}
 <li><code>""</code> (prázdný řetězec) pokud si je prohlížeč jistý, že tento formát přehrát nemůže
 </ul>
 
-<p>Následující druhá funkce otestuje podporu otevřeného formátu videa, který podporuje Mozilla Firefox a další open source prohlížeče. Celý proces je stejný, s jediným rozdílem - v řetězci, který předáme funkci <code>canPlayType()</code>. Technicky řečeno se prohlížeče ptáte, zda dokáže přehrát video v Theora a zkub v Vorbis, to vše vložené do Ogg kontejneru.
+<p>Následující druhá funkce otestuje podporu otevřeného formátu videa, který podporuje Mozilla Firefox a další open source prohlížeče. Celý proces je stejný, s jediným rozdílem - v řetězci, který předáme funkci <code>canPlayType()</code>. Technicky řečeno se prohlížeče ptáte, zda dokáže přehrát video v Theora a zvuk ve Vorbis, to vše vložené do Ogg kontejneru.
 
 <pre><code>function supports_ogg_theora_video() {
   if (!supports_video()) { return false; }
@@ -311,7 +311,7 @@ OD: Kdokoliv, kdo má fyzický přístup k počítači by se mohl na data vašeh
 
 <p class=ss style="margin:1.75em"><span id=live-web-workers></span>
 
-<p><a href=http://www.whatwg.org/specs/web-workers/current-work/>Web Workers</a> nabízí standardizovanou cestu, jakou mohou prohlížeče spouštět javascriptový kód na pozadí. S pomocé web workers můžete spustit několik &#8222;vláken&#8220; a ty pak mohou běžet více méně ve stejném čase. (Stačí, když si představíte, že váš počítač dokáže součastně spustit několik aplikací, je to skoro to samé.) Tato &#8222;vlákna na pozadí&#8220; mohou provádět složité matematické výpočty a sítové požadavky nebo přistupovak k <a href=#local-storage>local storage</a> zatímco hlavní webová stránka reaguje na akce uživatele, ať už se jedná o skrolování, klikání nebo psaní.
+<p><a href=http://www.whatwg.org/specs/web-workers/current-work/>Web Workers</a> nabízí standardizovanou cestu, jakou mohou prohlížeče spouštět javascriptový kód na pozadí. S pomocí web workers můžete spustit několik &#8222;vláken&#8220; a ty pak mohou běžet více méně ve stejném čase. (Stačí, když si představíte, že váš počítač dokáže současně spustit několik aplikací, je to skoro to samé.) Tato &#8222;vlákna na pozadí&#8220; mohou provádět složité matematické výpočty a sítové požadavky nebo přistupovat k <a href=#local-storage>local storage</a> zatímco hlavní webová stránka reaguje na akce uživatele, ať už se jedná o skrolování, klikání nebo psaní.
 
 <p>Test podpory web workers využívá <a href=#techniques>detekční techniku #1</a>. Pokud váš prohlížeč podporuje Web Worker <abbr>API</abbr>, bude u globálního objektu <code>window</code> existovat vlastnost <code>Worker</code>. Pokud váš prohlížeč nepodporuje Web Worker <abbr>API</abbr>, pak bude vlastnost <code>Worker</code> nedefinovaná.
 
@@ -339,9 +339,9 @@ OD: Kdokoliv, kdo má fyzický přístup k počítači by se mohl na data vašeh
 
 <p>Je snadné číst webové stránky, když jste offline: stačí se připojit k internetu, načíst webovou stránku, odpojit se od internetu, odjet na opuštěnou chatu a tam si vklidu stránku přečíst. (Abyste ušetřili čas, klidně přeskočte ten krok s chatou.) Ovšem, co webové aplikace jako jsou <a href=http://mail.google.com/>Gmail</a> nebo <a href=http://docs.google.com/>Dokumenty Google</a>? S <abbr>HTML5</abbr> může kdokoliv (nejen Google!) vytvářet aplikace, které fungují offline.
 
-<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#offline>Offline webové aplikace</a> začínají jako online webové aplikace. Když prvně navštívíte aplikaci podporující režim offline, webový server řekne prohlížeči, které soubory bude potřebovat, aby mohl fungovat offline. Může se jednat o jakékoliv soubory &mdash; <abbr>HTML</abbr>, JavaScript, obrázky, dokonce <a href=#video>videa</a>. Jakmile váš prohlížeč stáhne všechny potřebné soubory, můžete stránku znovu navštívit, i když nejste připojeni k internetu. Váš prohlížeč si všimne, že jste právě offline a použije soubory, které si předtím stáhnul. Jakmile se opět připojíte online, všechny změny, které jste provedli, se nahrají na vzdálená webový server.
+<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#offline>Offline webové aplikace</a> začínají jako online webové aplikace. Když prvně navštívíte aplikaci podporující režim offline, webový server řekne prohlížeči, které soubory bude potřebovat, aby mohl fungovat offline. Může se jednat o jakékoliv soubory &mdash; <abbr>HTML</abbr>, JavaScript, obrázky, dokonce <a href=#video>videa</a>. Jakmile váš prohlížeč stáhne všechny potřebné soubory, můžete stránku znovu navštívit, i když nejste připojeni k internetu. Váš prohlížeč si všimne, že jste právě offline a použije soubory, které si předtím stáhnul. Jakmile se opět připojíte online, všechny změny, které jste provedli, se nahrají na vzdálený webový server.
 
-<p>Test na podporu pro offline používá <a href=#techniques>detekční techniku #1</a>. Pokud váš prohlížeč podporuje offline webové aplikace, bude u globálního objektu <code>window</code> existovat vlastnot <code>applicationCache</code>. Pokud váš prohlížeč offline webové aplikace nepodporuje, pak bude vlastnost <code>applicationCache</code> nedefinovaná. Podporu pro offline webové aplikace můžete otestovat následující funkcí:
+<p>Test na podporu pro offline používá <a href=#techniques>detekční techniku #1</a>. Pokud váš prohlížeč podporuje offline webové aplikace, bude u globálního objektu <code>window</code> existovat vlastnost <code>applicationCache</code>. Pokud váš prohlížeč offline webové aplikace nepodporuje, pak bude vlastnost <code>applicationCache</code> nedefinovaná. Podporu pro offline webové aplikace můžete otestovat následující funkcí:
 
 <pre><code>function supports_offline() {
   return !!window.applicationCache;
@@ -372,7 +372,7 @@ OD: Kdokoliv, kdo má fyzický přístup k počítači by se mohl na data vašeh
 <div class=inner>
 <blockquote class=note>
 <p><span>&#x261E;</span>OT: Je geolokace součástí <abbr>HTML5</abbr>? Proč o ní hovoříte?<br>
-OD: Podpora pro geolokaci je do prohlížečů přidávána právě teď, ve stejnou dobu, kdy se do prohlížečů přidávají nové vlastnosti <abbr>HTML5</abbr>. Přesně řečeno, geolokace je standardizována <a href=http://www.w3.org/2008/geolocation/>pracovní skupinout pro geolokaci</a>, která je nezávislá na pracovní skupině pro <abbr>HTML5</abbr>. Ovšem já do této knížky geolokaci stejně zahrnu, protože se jedná o součást evoluce webu, ke které dochází právě teď.
+OD: Podpora pro geolokaci je do prohlížečů přidávána právě teď, ve stejnou dobu, kdy se do prohlížečů přidávají nové vlastnosti <abbr>HTML5</abbr>. Přesně řečeno, geolokace je standardizována <a href=http://www.w3.org/2008/geolocation/>pracovní skupinou pro geolokaci</a>, která je nezávislá na pracovní skupině pro <abbr>HTML5</abbr>. Ovšem já do této knížky geolokaci stejně zahrnu, protože se jedná o součást evoluce webu, ke které dochází právě teď.
 </blockquote>
 </div>
 </div>
@@ -407,7 +407,7 @@ OD: Podpora pro geolokaci je do prohlížečů přidávána právě teď, ve ste
 
 <p>O webových formulářích jste již určitě slyšeli, že? Vytvoříte <code>&lt;form></code>, přidáte několik prvků <code>&lt;input type="text"></code>, možná i <code>&lt;input type="password"></code> a všechno ukončíte tlačítkem <code>&lt;input type="submit"></code>.
 
-<p>Jenže to toho nevíte stěží polovinu. <abbr>HTML5</abbr> přidává přec tucet nových druhů značky input, které můžete použít ve vašich formulářích.
+<p>Jenže to toho víte stěží polovinu. <abbr>HTML5</abbr> přidává přes tucet nových typů značky input, které můžete použít ve vašich formulářích.
 
 <ol>
 <li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#text-state-and-search-state><code>&lt;input type="search"></code></a> pro vyhledávací boxy
@@ -433,7 +433,7 @@ OD: Podpora pro geolokaci je do prohlížečů přidávána právě teď, ve ste
 
 <pre><code>  i.setAttribute("type", "color");</code></pre>
 
-<p>Pokud prohlížeč daný typ podporuje, pak bude vlastnost <code>type</code> mít hodnotu, jakou jsme jí zadali. Pokud prohlížeč daný typ nepodporuje, bude námi zadanou hodnotu ignorovat a vlastnost <code>type</code> bude stále <code>"text"</code>.
+<p>Pokud prohlížeč daný typ podporuje, pak bude vlastnost <code>type</code> mít hodnotu, kterou jsme jí zadali. Pokud prohlížeč daný typ nepodporuje, bude námi zadanou hodnotu ignorovat a vlastnost <code>type</code> bude stále <code>"text"</code>.
 
 <pre><code>  return i.type !== "text";</code></pre>
 
@@ -441,7 +441,7 @@ OD: Podpora pro geolokaci je do prohlížečů přidávána právě teď, ve ste
 
 <p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> otestování podpory pro výběr data
 <pre><code>if (<mark>!Modernizr.inputtypes.date</mark>) {
-  // chybí native podpora pro &lt;input type="date"> 8-(
+  // chybí nativní podpora pro &lt;input type="date"> 8-(
   // můžete sami vytvořit pomocí <a href=http://docs.dojocampus.org/dojox/widget/Calendar>Dojo</a> nebo <a href=http://jqueryui.com/demos/datepicker/>jQueryUI</a>
 }</code></pre>
 
@@ -480,7 +480,7 @@ OD: Podpora pro geolokaci je do prohlížečů přidávána právě teď, ve ste
 
 <p>Jelikož se autofocus řeší JavaScriptem, není jednoduché vyřešit všechny zmíněné případy, a kdo by se zdržoval s uživateli, kteří nechtějí, aby jim webová stránka kradla fokus?
 
-<p>Jako řešení představilo <abbr>HTML5</abbr> <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control>atribut <code>autofocus</code> pro formulářová pole</a>. Atribut <code>autofocus</code> dělá přesně to, co říká: přemístí fokus na zvolené vstupní pole. Jelikož je vše řešeno na úrovni značkovacího jazyka a nikoliv JavaScriptem, bude toto chování jednotné pro všechn webové stránky. Výrobciprohlížečů (nebo autoři rozšíření) mohou uživatelům nabídnout možnost autofocus vypnout.
+<p>Jako řešení představilo <abbr>HTML5</abbr> <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control>atribut <code>autofocus</code> pro formulářová pole</a>. Atribut <code>autofocus</code> dělá přesně to, co říká: přemístí fokus na zvolené vstupní pole. Jelikož je vše řešeno na úrovni značkovacího jazyka a nikoliv JavaScriptem, bude toto chování jednotné pro všechny webové stránky. Výrobci prohlížečů (nebo autoři rozšíření) mohou uživatelům nabídnout možnost autofocus vypnout.
 
 <p>Test podporu autofokusy používá <a href=#techniques>detekční techniku #2</a>. Pokud váš prohlížeč podporuje autofokus webových formulářů, bude mít objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;input></code> vlastnost <code>autofocus</code> (a to i v případě, pokud jste do <abbr>HTML</abbr> atribut <code>autofocus</code> nezapsali). Pokud váš prohlížeč nepodporuje autofokus webových formulářů, objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;input></code> nebude mít vlastnost <code>autofocus</code>. K detekci můžete použít tuto funkci:
 
@@ -505,7 +505,7 @@ OD: Podpora pro geolokaci je do prohlížečů přidávána právě teď, ve ste
 
 <p class=ss style="width:305px"><img src=i/openclipart.org_johnny_automatic_divider_cards.png alt="kartotéka podle abecedy" width=305 height=224><br><span id="live-microdata-api"></span>
 
-<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#microdata>Mikrodata</a> je standardizovaný způsob pro vkládádí další sémantiky do vašich webových stránek. Můžete např. použít mikrodata pro zdůraznění, že daná fotografie je dostupná pod danou Creative Commons licencí. Jak uvidíte v <a href=extensibility.html>kapitole o distributed extensibility</a>, můžete použít mikrodata k označkování stránky &#8222;O mně&#8220;. Prohlížeče, rozšíření prohlížečů a vyhledávače mohou zkonvertovat <abbr>HTML5</abbr> mikrodata na <a href=http://en.wikipedia.org/wiki/VCard>vCard</a>, což je standardizovaný formát pro sdílení kontaktů. Můžete také definovat své vlastní slovníky pro mikrodata.
+<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#microdata>Mikrodata</a> je standardizovaný způsob pro vkládání další sémantiky do vašich webových stránek. Můžete např. použít mikrodata pro zdůraznění, že daná fotografie je dostupná pod danou Creative Commons licencí. Jak uvidíte v <a href=extensibility.html>kapitole o distributed extensibility</a>, můžete použít mikrodata k označkování stránky &#8222;O mně&#8220;. Prohlížeče, rozšíření prohlížečů a vyhledávače mohou zkonvertovat <abbr>HTML5</abbr> mikrodata na <a href=http://en.wikipedia.org/wiki/VCard>vCard</a>, což je standardizovaný formát pro sdílení kontaktů. Můžete také definovat své vlastní slovníky pro mikrodata.
 
 <p>Standard pro <abbr>HTML5</abbr> mikrodata zahrnuje jak <abbr>HTML</abbr> značkování (zejména pro vyhledávače) tak sadu funkcí <abbr>DOM</abbr> (primárně pro prohlížeče). Použitím mikrodat na vašich webových stránkách nemůžete nic zkazit. Nejedná se o nic víc, než několik správně umístěných atributů; vyhledávače, které mikrodatům nerozumí, je budou prostě ignorovat. Ovšem, pokud potřebujete přistupovat a pracovat s mikrodaty skrze <abbr>DOM</abbr>, musíte napřed otestovat, zda prohlížeč podoruje microdata <abbr>DOM</abbr> <abbr>API</abbr>.
 

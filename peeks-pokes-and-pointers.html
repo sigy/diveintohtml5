@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <meta charset=utf-8>
-<title>HTML5 Peeks, Pokes and Pointers</title>
+<title>HTML5 po ruce a do kapsy</title>
 <style>
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,figure,footer,header,hgroup,menu,nav,section,menu,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
 article,aside,figure,footer,header,hgroup,nav,section{display:block}
@@ -193,13 +193,13 @@ code i{
 <link rel=prefetch href=index.html>
 <table><!-- giveupandusetables.com -->
 <tr>
-  <td colspan=8><h1>HTML5 Peeks, Pokes and Pointers</h1>
+  <td colspan=8><h1>HTML5 po ruce a do kapsy</h1>
 
 <tr>
   <td colspan=8><hr>
 
 <tr>
-  <td colspan=8><i>Common abbreviations (you&#8217;ll see these throughout this chart):</i>
+  <td colspan=8><i>Zkratky (aby byl seznam čitelnější):</i>
 
 <tr>
   <td colspan=4><b>$new</b>=<code>document.createElement</code>
@@ -207,25 +207,25 @@ code i{
   <td colspan=4><b>$bool</b>=<code>function(any){return!(any=="no"||!any)}</code>
 
 <tr>
-  <td colspan=8><i>Most new features can be detected in JavaScript. To test for HTML5 video support, create a <code>&lt;video></code> element and check for a property in its DOM: <code>if("canPlayType" in $new("video")){...}</code> See <a href=detect.html>Chapter 2: Detecting HTML5 Features</a></i>.
+	<td colspan=8><i>Většina nových funkcí může být detekována JavaScriptem. Pokud chcete otestovat podporu videa, vytvořte prvek <code>&lt;video></code> <br>a otestujte, zda v DOM má potřebné vlastnosti: <code>if("canPlayType" in $new("video")){...}</code> <br>Viz <a href=detect.html>kapitola 2: Detekujeme podporu HTML5</a></i>.
 
 <tr>
-  <td colspan=3><h2>New elements</h2>
+  <td colspan=3><h2>Nové elementy</h2>
   <td>
 
-  <td colspan=4><h2><span>5 > 2</span> Forms</h2>
+  <td colspan=4><h2><span>5 > 2</span> Formuláře</h2>
 
 <tr>
-  <td colspan=3><i>See <a href=semantics.html>Chapter 3: What Does It All Mean?</a></i>
+  <td colspan=3><i>Viz <a href=semantics.html>kapitola 3: What Does It All Mean?</a></i>
   <td>
 
-  <td colspan=4><i>Backward-compatible with HTML 4. See <a href=forms.html>Chapter 9: A Form of Madness</a>.</i>
+  <td colspan=4><i>Zpětně kompatibilní s HTML 4. Viz <a href=forms.html>kapitola 9: A Form of Madness</a>.</i>
 
 <tr>
-  <td colspan=3><b>Test for support</b>
+  <td colspan=3><b>Test podpory</b>
   <td>
 
-  <td colspan=4><b>Test for support</b>
+  <td colspan=4><b>Test podpory</b>
 
 <tr>
   <td>
@@ -234,7 +234,7 @@ code i{
   <td>
 
   <td>
-  <td class=dots><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#constraints>Validation</a></b>
+  <td class=dots><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#constraints>Ověřování</a></b>
   <td colspan=2><code>"noValidate" in $new("form")</code>
 
 <tr>
@@ -244,7 +244,7 @@ code i{
   <td>
 
   <td>
-  <td class=dots><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-pattern-attribute>Regex constraint</a></b>
+  <td class=dots><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-pattern-attribute>Kontrola regulárními výrazy</a></b>
   <td colspan=2><code>"pattern" in $new("input")</code>
 
 <tr>
@@ -254,7 +254,7 @@ code i{
   <td>
 
   <td>
-  <td class=dots><b><a href=forms.html#placeholder>Placeholder text</a></b>
+  <td class=dots><b><a href=forms.html#placeholder>Textová nápověda (placeholder)</a></b>
   <td colspan=2><code>"placeholder" in $new("input")</code>
 
 <tr>
@@ -264,7 +264,7 @@ code i{
   <td>
 
   <td>
-  <td class=dots><b><a href=forms.html#autofocus>Autofocus</a></b>
+  <td class=dots><b><a href=forms.html#autofocus>Autofokus</a></b>
   <td colspan=2><code>"autofocus" in $new("input")</code>
 
 <tr>
@@ -283,7 +283,7 @@ code i{
   <td><code>"value" in $new("meter")</code>
   <td>
 
-  <td colspan=4><b><a href=forms.html>New input types</a></b> <i>Browsers may customize style or input methods.</i>
+  <td colspan=4><b><a href=forms.html>Nové typy vstupních polí</a></b> <i>Prohlížeče mohou si mohou přízpůsobit vzhled nebo způsoby vstupu.</i>
 
 <tr>
   <td>
@@ -293,11 +293,11 @@ code i{
 
   <td>
   <td class=dots><code>type="search"</code>
-  <td colspan=2>search box
+  <td colspan=2>vyhledávání
   
 
 <tr>
-  <td colspan=2 class=dots><b>Text annotations</b>
+  <td colspan=2 class=dots><b>Textové anotace</b>
   <td><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/text-level-semantics.html#the-ruby-element><code>&lt;ruby></code></a>, <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/text-level-semantics.html#the-rt-element><code>&lt;rt></code></a>, <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/text-level-semantics.html#the-rp-element><code>&lt;rp></code></a>
   <td>
 
@@ -306,12 +306,12 @@ code i{
   <td colspan=2>spinbox
 
 <tr>
-  <td colspan=3><b>Semantics</b> <i>Usable in all browsers. <a href=http://code.google.com/p/html5shiv/>IE &lt; 9 requires a shim</a>.</i>
+  <td colspan=3><b>Sémantické prvky</b> <i>Použitelné ve všech prohlížečích. <a href=http://code.google.com/p/html5shiv/>IE &lt; 9 potřebuje záplatu</a>.</i>
   <td>
 
   <td>
   <td class=dots><span><code>type="range"</code></span>
-  <td colspan=2>slider
+  <td colspan=2>šoupátko
 
 <tr>
   <td>
@@ -320,7 +320,7 @@ code i{
 
   <td>
   <td class=dots><span><code>type="color"</code></span>
-  <td colspan=2>color picker
+  <td colspan=2>výběr barev
 
 <tr>
   <td>
@@ -329,8 +329,7 @@ code i{
 
   <td>
   <td class=dots><span><code>type="tel"</code></span>
-  <td colspan=2>telephone number
-
+  <td colspan=2>telefonní číslo
 <tr>
   <td>
   <td colspan=2><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/interactive-elements.html#the-summary-element><code>&lt;summary></code></a>
@@ -338,19 +337,19 @@ code i{
 
   <td>
   <td class=dots><span><code>type="url"</code></span>
-  <td colspan=2>web address
+  <td colspan=2>adresa webu
 
 <tr>
-  <td colspan=2 class=dots><span><b>Newly documented</b></span>
+  <td colspan=2 class=dots><span><b>Nově dokumentované</b></span>
   <td><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-iframe-element.html#the-embed-element><code>&lt;embed></code></a>, <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-button-element.html#the-keygen-element><code>&lt;keygen></code></a>, <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/text-level-semantics.html#the-wbr-element><code>&lt;wbr></code></a>
   <td>
 
   <td>
   <td class=dots><span><code>type="email"</code></span>
-  <td colspan=2>email address
+  <td colspan=2>e-mailová adresa
 
 <tr>
-  <td colspan=3><b><a href=http://dev.w3.org/html5/html4-differences/#absent-elements>Obsolete</a></b> <i>Still supported, but won&#8217;t validate.</i>
+  <td colspan=3><b><a href=http://dev.w3.org/html5/html4-differences/#absent-elements>Zastaralé</a></b> <i>Stále podporované, ale nedoporučené.</i>
   <td>
 
   <td>
@@ -360,7 +359,7 @@ code i{
   <td>
   <td colspan=3><code>&lt;basefont></code>, <code>&lt;big></code>, <code>&lt;center></code>, <code>&lt;font></code>, <code>&lt;s></code>, <code>&lt;strike></code>, 
 
-  <td colspan=4><b><a href=detect.html#input-types>Test for new input types</a></b> <i>All tests follow the same pattern.</i>
+  <td colspan=4><b><a href=detect.html#input-types>Test nových typů vstupních polí</a></b> <i>Všechny testy fungují podle stejného vzoru.</i>
 
 <tr>
   <td>
@@ -377,7 +376,7 @@ code i{
   <td colspan=3><code>&nbsp;&nbsp;var i = $new("input");</code>
 
 <tr>
-  <td rowspan=5 colspan=3><p class=note>Always quote your attribute values unless you&#8217;re a rockstar. Keep your trailing slashes if you like. Validation is still cool: <b><a href=http://html5.validator.nu/>html5.validator.nu</a></b>
+  <td rowspan=5 colspan=3><p class=note>Vždy dávejte atributy do uvozovek, pokud ovšem nejste celebrita. Klidně si pište do nepárových značek lomítka, pokud chcete. Z nezapomeňte, že validování rozhodně nevyšlo z módy: <b><a href=http://html5.validator.nu/>html5.validator.nu</a></b>
   <td rowspan=5 colspan=1>
 
   <td>
@@ -392,19 +391,19 @@ code i{
   <td colspan=3><code>}</code>
 
 <tr>
-  <td colspan=4><i>Some browers claim to &#8220;support&#8221; an input type but offer no default</i>
+  <td colspan=4>Některé prohlížeče &#8222;podporují&#8220; vstupní typy, ale nenabízejí uživatelské rozhraní.</i>
 
 <tr>
-  <td colspan=4><i>user interface. <a href=http://www.modernizr.com/>Modernizr</a> can detect this.</i>
+  <td colspan=4><i><a href=http://www.modernizr.com/><b>Modernizr.js</b></a> je dokáže detekovat.</i>
 
 <tr>
-  <td colspan=8><h2><span>look ma, no plugins</span> Multimedia</h2>
+  <td colspan=8><h2><span>Hele, mami, bez pluginů...</span> Multimedia</h2>
 
 <tr>
-  <td colspan=8><i>Encode video with <a href=http://firefogg.org/>Firefogg</a> (Theora), <a href=http://handbrake.fr/>HandBrake</a> (H.264), or <a href=http://www.mirovideoconverter.com/>Miro Video Encoder</a> (multiple). See <a href=video.html>Chapter 5: Video on the Web</a>.</i>
+  <td colspan=8><i>Video můžete zakódovat pomocí <a href=http://firefogg.org/>Firefogg</a> (Theora), <a href=http://handbrake.fr/>HandBrake</a> (H.264) nebo <a href=http://www.mirovideoconverter.com/>Miro Video Encoder</a> (víc najednou). Viz <a href=video.html>kapitola 5: Video on the Web</a>.</i>
 
 <tr>
-  <td colspan=2 class=dots><span><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#audio>&lt;audio></a> support</b></span>
+  <td colspan=2 class=dots><span><b>Podpora pro <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#audio>&lt;audio></a></b></span>
   <td colspan=6><code>"canPlayType" in $new("audio")</code>
 
 <tr>
@@ -442,68 +441,68 @@ code i{
   <td colspan=6><code>$bool($new("video").canPlayType('video/mp4; codecs="avc1.42E01E, mp4a.40.2"'))</code>
 
 <tr>
-  <td colspan=2 class=dots><span><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#htmlmediaelement>Properties</a></b></span>
-  <td colspan=6><i>These apply to both <code>&lt;audio></code> and <code>&lt;video></code> elements.</i>
+  <td colspan=2 class=dots><span><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#htmlmediaelement>Vlastnosti</a></b></span>
+  <td colspan=6><i>Lze použít pro prvek <code>&lt;audio></code> i <code>&lt;video></code>.</i>
 
 <tr>
   <td>
   <td class=dots><span><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#dom-media-src>src</a></code></span>
-  <td>string
+  <td>řetězec
   <td>
 
   <td>
   <td class=dots><span><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#dom-media-currentsrc>currentSrc</a></code></span>
-  <td colspan=2>string, read-only
+  <td colspan=2>řetězec, pouze ke čtení
 
 <tr>
   <td>
   <td class=dots><span><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#dom-media-preload>preload</a></code></span>
-  <td>string
+  <td>řetězec
   <td>
 
   <td>
   <td class=dots><span><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#dom-media-tracks>tracks</a></code></span>
-  <td colspan=2>array of <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#timedtrack>TimedTrack</a> objects
+  <td colspan=2>pole objektů <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#timedtrack>TimedTrack</a>
 
 <tr>
   <td>
   <td class=dots><span><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#dom-media-currenttime>currentTime</a></code></span>
-  <td>in seconds
+  <td>v sekundách
   <td>
 
   <td>
   <td class=dots><span><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#dom-media-buffered>buffered</a></code></span>
-  <td colspan=2><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#timeranges>TimeRanges</a> object, read-only
+  <td colspan=2><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#timeranges>TimeRanges</a> objekt, pouze ke čtení
 
 <tr>
   <td>
   <td class=dots><span><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#dom-media-initialtime>initialTime</a></code></span>
-  <td>in seconds, read-only
+  <td>v sekundách, pouze ke čtení
   <td>
 
   <td>
   <td class=dots><span><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#dom-media-played>played</a></code></span>
-  <td colspan=2>TimeRanges object, read-only
+  <td colspan=2>objekt TimeRanges, pouze ke čtení
 
 <tr>
   <td>
   <td class=dots><span><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#dom-media-duration>duration</a></code></span>
-  <td>in seconds, read-only
+  <td>v sekundách, pouze ke čtení
   <td>
 
   <td>
   <td class=dots><span><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#dom-media-seekable>seekable</a></code></span>
-  <td colspan=2>TimeRanges object, read-only
+  <td colspan=2>objekt TimeRanges, pouze ke čtení
 
 <tr>
   <td>
   <td class=dots><span><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#dom-media-startoffsettime>startOffsetTime</a></code></span>
-  <td>datetime, read-only
+  <td>datetime, pouze ke čtení
   <td>
 
   <td>
   <td class=dots><span><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#dom-media-networkstate>networkState</a></code></span>
-  <td colspan=2>enumerated, read-only
+  <td colspan=2>výčtová hodnota, pouze ke čtení
 
 <tr>
   <td>
@@ -513,17 +512,17 @@ code i{
 
   <td>
   <td class=dots><span><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#dom-media-readystate>readyState</a></code></span>
-  <td colspan=2>enumerated, read-only
+  <td colspan=2>výčtová hodnota, pouze ke čtení
 
 <tr>
   <td>
   <td class=dots><span><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#dom-media-ended>ended</a></code></span>
-  <td>boolean, read-only
+  <td>boolean, pouze ke čtení
   <td>
 
   <td>
   <td class=dots><span><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#dom-media-error>error.code</a></code></span>
-  <td colspan=2>enumerated, read-only
+  <td colspan=2>výčtová hodnota, pouze ke čtení
 
 <tr>
   <td>
@@ -531,7 +530,7 @@ code i{
   <td>boolean
   <td>
 
-  <td rowspan=6 colspan=4><p class=note>List multiple <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#the-source-element><code>&lt;source></code></a> elements in an <code>&lt;audio></code> or <code>&lt;video></code>. HTML5-supporting browsers don&#8217;t render children of <code>&lt;video></code>, so put your <a href=video.html#ie>Flash fallback</a> there. Audio and video must be served with the proper MIME type, so check your <code>Content-Type</code> headers!
+  <td rowspan=6 colspan=4><p class=note>V jednom prvku <code>&lt;audio></code> i <code>&lt;video></code> můžete použít více prvků <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#the-source-element><code>&lt;source></code></a>. Prohlížeče podporující HTML5 nebudou vykreslovat dceřinné prvky značek <code>&lt;video></code>, můžete do nich vložit <a href=video.html#ie>náhradí obsah (fallback) ve Flashi</a>. Audio a video musí být nabízeny se správným MIME typep, nezapomeňte zkontrolovat vaše hlavičky <code>Content-Type</code>!
 
 <tr>
   <td>
@@ -548,7 +547,7 @@ code i{
 <tr>
   <td>
   <td class=dots><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#dom-media-volume>volume</a></code>
-  <td>0.0 to 1.0, default = 1.0
+  <td>mezi 0.0 a 1.0, default = 1.0
   <td>
 
 <tr>
@@ -567,7 +566,7 @@ code i{
   <td colspan=3><h2>Offline</h2>
   <td>
 
-  <td colspan=4><h2><span><a href=http://isgeolocationpartofhtml5.com/>IsGeolocationPartOfHTML5.com</a></span> Geolocation</h2>
+  <td colspan=4><h2><span><a href=http://isgeolocationpartofhtml5.com/>IsGeolocationPartOfHTML5.com</a></span> Geolokace</h2>
 
 <tr>
   <td colspan=3><i>See <a href=offline.html>Chapter 8: Let&#8217;s Take This Offline</a>.</i>

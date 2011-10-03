@@ -1,2 +1,14 @@
-forms.html - Jaroslav "Dero" Polakovic - @dero_name
-storage.html - Martin Hujer - @MartinHujer
+CHAPTER                   - size- translator
+
+kap.0  introduction.html  - 10k - DONE Martin Hassman
+kap.1  past.html          - 55k - Martin Hassman - @hassmanm
+kap.2  detect.html        - 56k - DONE Martin Hassman
+kap.3  semantics.html     - 76k - 
+kap.4  canvas.html        - 55k -
+kap.5  video.html         - 90k -
+kap.6  geolocation.html   - 32k - 
+kap.7  storage.html       - 33k - Vojtech Koudela (Martin Hujer - @MartinHujer)
+kap.8  offline.html       - 32k - Martin Hujer - @MartinHujer
+kap.9  forms.html         - 44k - Jaroslav "Dero" Polakovic - @dero_name
+kap.10 extensibility.html - 92k -
+kap.11 history.html       - 22k -

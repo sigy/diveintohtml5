@@ -1,5 +1,12 @@
+TERMINOLOGICKY SLOVNICEK
+
+Prosim prekladatele, aby obsah tohoto souboru sledovali.
+pripadne komentovali nebo doplnovali vlastni navrhy:
+https://github.com/met/diveintohtml5/blob/master/slovnicek.txt
+
 CO PREFEROVAT?
 
-HTML elements = HTML elementy vs *HTML prvky* (vs prvky HTML)
-DOM - sklonovat nebo ne? *v DOMu* vs v DOM
-email - e-mail vs email ??
+HTML elements - elementy HTML vs *prvky HTML* // JESTE DEBATUJEME S JIRKOU KOSKEM, ktery doporucuje "elementy HTML"
+DOM - *v DOMu* vs v DOM, tj. sklonovat
+email - *e-mail* vs email
+canvas - canvas vs platno ???

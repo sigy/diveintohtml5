@@ -10,3 +10,4 @@ HTML elements - elementy HTML vs *prvky HTML* // JESTE DEBATUJEME S JIRKOU KOSKE
 DOM - *v DOMu* vs v DOM, tj. sklonovat
 email - *e-mail* vs email
 canvas - canvas vs platno ???
+Jaký je rod HTML - "ten HTML nìco definoval" nebo "to HTML definovalo" ???

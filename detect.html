@@ -25,7 +25,7 @@ body{counter-reset:h1 2}
 
 <p class=ss style="width:257px"><img src=i/openclipart.org_johnny_automatic_peeking_out_the_window.png width=257 height=436 alt="děvčátko, které se dívá z okna">
 
-<p>Všechny objekty <abbr>DOM</abbr>u sdílí sadu společných vlastností, ovšem některé objekty mají některé vlastnosti navíc. V prohlížečích, které podporují vlastnosti <abbr>HTML5</abbr>, budou mít některé objekty unikátní vlastnosti. Rychlých pohledem na <abbr>DOM</abbr> tak zjistíme, které vlastnosti prohlížeč podporuje.
+<p>Všechny objekty <abbr>DOM</abbr>u sdílí sadu společných vlastností, ovšem některé objekty mají některé vlastnosti navíc. V prohlížečích, které podporují vlastnosti <abbr>HTML5</abbr>, budou mít některé objekty unikátní vlastnosti. Rychlým pohledem na <abbr>DOM</abbr> tak zjistíme, které vlastnosti prohlížeč podporuje.
 
 <p>Existují čtyři základní techniky detekující konkrétní vlastnost v tom kterém prohlížeči. Ukážeme si je od nejjednodušší po tu nejsložitější:
 
@@ -78,16 +78,16 @@ body{counter-reset:h1 2}
 
 <p class=ss style="width:300px"><img src=i/openclipart.org_johnny_automatic_fishing_boat.png width=300 height=203 alt="muž rybařící na loďce"><br><span id=live-canvas></span>
 
-<p><abbr>HTML5</abbr> definuje <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>prvek &lt;canvas></a> jako &#8222;na rozlišení závislé plátno, které lze použít pro vykreslení grafů, herní grafiky nebo jiných obrázků <i>za běhu</i>.&#8220; Prvek <dfn>canvas</dfn> vytvoří na vaší stránce obdélník, do kterého můžete JavaScriptem nakreslit, cokoliv si budete přát. <abbr>HTML5</abbr> definuje sadu funkcí (&#8222;the canvas <abbr>API</abbr>&#8220;) pro kreslení tvarů, definování cest, tvorbu gradientů a používání transformací.
+<p><abbr>HTML5</abbr> definuje <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>prvek &lt;canvas></a> jako &#8222;na rozlišení závislé plátno, které lze použít pro kreslení grafů, herní grafiky nebo jiných obrázků <i>za běhu</i>.&#8220; Prvek <dfn>canvas</dfn> vytvoří na vaší stránce obdélník, do kterého můžete JavaScriptem nakreslit cokoliv si budete přát. <abbr>HTML5</abbr> definuje sadu funkcí (&#8222;the canvas <abbr>API</abbr>&#8220;) pro kreslení tvarů, definování cest, tvorbu gradientů a používání transformací.
 
-<p>Test podpory canvas <abbr>API</abbr> použivá <a href=#techniques>detekční techniku #2</a>. Pokud váš prohlížeč podporuje canvas <abbr>API</abbr>, pak objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;canvas></code> bude obsahovat <a href=canvas.html#shapes>metodu <code>getContext()</code></a>. Pokud váš pohlížeč canvas <abbr>API</abbr> nepodporuje, tak objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;canvas></code> bude mít pouze sadu běžných vlastností, ovšem žádnou z těch specifických pro canvas.
+<p>Test podpory canvas <abbr>API</abbr> používá <a href=#techniques>detekční techniku #2</a>. Pokud váš prohlížeč podporuje canvas <abbr>API</abbr>, pak objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;canvas></code> bude obsahovat <a href=canvas.html#shapes>metodu <code>getContext()</code></a>. Pokud váš pohlížeč canvas <abbr>API</abbr> nepodporuje, tak objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;canvas></code> bude mít pouze sadu běžných vlastností, ovšem žádnou z těch specifických pro canvas.
 
 <pre><code>function supports_canvas() {
   return !!document.createElement('canvas').getContext;
 }
 </code></pre>
 
-<p>Tato funkce nejprve vytvoří prázdný prvek <code>&lt;canvas></code>, který ovšem není přidán do vaší stránky, takže jej nikdy nikdo neuvidí. Je pouze vytovřený v paměti a plave si odnikud nikam jako loďka po líné řece.
+<p>Tato funkce nejprve vytvoří prázdný prvek <code>&lt;canvas></code>, který ovšem není přidán do vaší stránky, takže jej nikdy nikdo neuvidí. Je  vytvořený pouze v paměti počítače a plave si v ní odnikud nikam jako loďka po líné řece.
 
 <pre><code>return !!document.<mark>createElement('canvas')</mark>.getContext;</code></pre>
 
@@ -118,7 +118,7 @@ body{counter-reset:h1 2}
 
 <p class=ss style="width:414px"><img src=i/openclipart.org_johnny_automatic_baseball_at_bat.png width=414 height=254 alt="baseballový hráč na pálce"><br><span id=live-canvas-text></span>
 
-<p>I přestože váš prohlížeč podporuje <a href=#canvas>canvas <abbr>API</abbr></a>, nemusí ještě nutně podporovat <dfn>canvas text</dfn> <abbr>API</abbr>. Canvas <abbr>API</abbr> se totiž vyvíjelo a textové funkce byly přidány až později. Některé prohlížeče implementovaly canvas ještě před tím, než se objevilo text <abbr>API</abbr>.
+<p>I přestože váš prohlížeč podporuje <a href=#canvas>canvas <abbr>API</abbr></a>, nemusí ještě nutně podporovat <dfn>canvas text</dfn> <abbr>API</abbr>. Canvas <abbr>API</abbr> se totiž postupně vyvíjelo a textové funkce byly přidány až později. Některé prohlížeče implementovaly canvas ještě před tím, než se objevilo text <abbr>API</abbr>.
 
 <p>Test na canvas text <abbr>API</abbr> používá <a href=#techniques>detekční techniku #2</a>. Pokud váš prohlížeč podporuje canvas <abbr>API</abbr>, pak objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;canvas></code> bude obsahovat <a href=canvas.html#shapes>metodu <code>getContext()</code></a>. Pokud váš pohlížeč canvas <abbr>API</abbr> nepodporuje, tak objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;canvas></code> bude mít pouze sadu běžných vlastností, ovšem žádnou z těch specifických pro canvas.
 
@@ -159,7 +159,7 @@ body{counter-reset:h1 2}
 
 <p class=ss style="width:224px"><img src=i/openclipart.org_johnny_automatic_at_the_theater.png alt="diváci v divadle" width=224 height=334><br><span id=live-video></span>
 
-<p>Prvek <code>&lt;video></code> byl navržen tak, aby byl použitelný bez jakéhokoliv detekčního skriptu. Můžete uvést několik video souborů a prohlížeče, které <abbr>HTML5</abbr> video podorují, si z nich vyberou, podle toho, jaké formáty podporují.
+<p>Prvek <code>&lt;video></code> byl navržen tak, aby byl použitelný bez jakéhokoliv detekčního skriptu. Můžete uvést několik video souborů a prohlížeče, které <abbr>HTML5</abbr> video podporují, si z nich vyberou, podle toho, jaké formáty podporují.
 
 (Viz &#8222;A gentle introduction to video encoding&#8220; <a href=http://diveintomark.org/archives/2008/12/18/give-part-1-container-formats>part 1: container formats</a> a <a href=http://diveintomark.org/archives/2008/12/19/give-part-2-lossy-video-codecs>part 2: lossy video codecs</a>, kde se dozvíte víc o rozličných formátech videa.)
 
@@ -171,7 +171,7 @@ body{counter-reset:h1 2}
   return !!document.createElement('video').canPlayType;
 }</code></pre>
 
-<p>Fukci nemusíte psát sami, místo toho můžete použít <a href=#modernizr>Modernizr</a>, aby detekoval podporu <abbr>HTML5</abbr> videa za vás.
+<p>Funkci nemusíte psát sami, místo toho můžete použít <a href=#modernizr>Modernizr</a>, aby detekoval podporu <abbr>HTML5</abbr> videa za vás.
 
 <p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> ověř podporu <abbr>HTML5</abbr> videa
 <pre><code>if (<mark>Modernizr.video</mark>) {
@@ -189,11 +189,11 @@ body{counter-reset:h1 2}
 
 <h2 id=video-formats>Formáty videa</h2>
 
-<p>Formáty videa bychom mohli přirovnat k psaným jazykům. Noviny v češtině mohou sdělovat stejnou informaci jako španělské noviny, ovšem pokud umít číst pouze česky, tak vám k něčemu budou pouze ty první. Aby prohlížeč mohl přehrát video, musí rozumět &#8222;jazyku&#8220;, kterým je video napsáno.
+<p>Formáty videa bychom mohli přirovnat k psaným jazykům. Noviny v češtině mohou sdělovat stejnou informaci jako španělské noviny, ovšem pokud umíte číst pouze česky, tak vám k něčemu budou pouze ty první. Aby prohlížeč mohl přehrát video, musí rozumět &#8222;jazyku&#8220;, kterým je video napsáno.
 
 <p class=ss style="float:left;margin:0 1.75em 1.75em 0;width:250px"><img src=i/openclipart.org_johnny_automatic_man_reading_newspaper.png alt="muž čtoucí noviny" width=250 height=261><br><span id=live-video-formats></span>
 
-<p>Takový &#8222;jazyk&#8220;, ve kterém je video zapsáno, se nazývá &#8220;kodek&#8220; &mdash; jedná se o algoritmus, podle kterého se video zakóduje do řady bitů. Existuje hromada kodeků, jenže který s nich máme použít? Skutečnost je smutná, prohlížeče se nedokázaly dohodnut na používání jednoho stejného kodeku. Ovšem, alespoň celou tu hromadu kodeků změnšily na pouhé dva. První kodek je placený (platí se licenční poplatky za patenty), ale funguje v <a href=http://www.apple.com/safari/>Safari</a> a na iPhone. (Funguje také ve Flashi, pokud použijete řešení typu <a href=http://camendesign.com/code/video_for_everybody>Video for Everybody!</a>.) Druhý kodek je zdarma a funguje v open source prohlžečích jako je <a href=http://code.google.com/chromium/>Chromium</a> a <a href=http://www.getfirefox.com/>Mozilla Firefox</a>.
+<p>Takový &#8222;jazyk&#8220;, ve kterém je video zapsáno, se nazývá &#8222;kodek&#8220; &mdash; jedná se o algoritmus, podle kterého se video zakóduje do řady bitů. Existuje hromada kodeků, jenže který s nich máme použít? Skutečnost je smutná, prohlížeče se nedokázaly dohodnut na používání jednoho stejného kodeku. Ovšem, alespoň celou tu hromadu kodeků změnšily na pouhé dva. První kodek je placený (platí se licenční poplatky za patenty), ale funguje v <a href=http://www.apple.com/safari/>Safari</a> a na iPhone. (Funguje také ve Flashi, pokud použijete řešení typu <a href=http://camendesign.com/code/video_for_everybody>Video for Everybody!</a>.) Druhý kodek je zdarma a funguje v open source prohlížečích jako je <a href=http://code.google.com/chromium/>Chromium</a> a <a href=http://www.getfirefox.com/>Mozilla Firefox</a>.
 
 <p>Test podpory formátů videa používá <a href=#techniques>detekční techniku #3</a>. Pokud váš prohlížeč podporuje <abbr>HTML5</abbr> video, tak objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;video></code> bude obsahovat metodu <code>canPlayType()</code>. Tato metoda vám řekne, zda prohlížeč podporuje konkrétní formát videa.
 
@@ -205,7 +205,7 @@ body{counter-reset:h1 2}
   return v.canPlayType('video/mp4; codecs="avc1.42E01E, mp4a.40.2"');
 }</code></pre>
 
-<p>Funkce začíná <a href=#video>otestováním podporu <abbr>HTML5</abbr> videa</a> pomocí funkce <code>supports_video()</code>, kterou jste poznali v předchozí sekci. Pokud váš prohlížeč nepodporuje <abbr>HTML5</abbr> video, nebude také podporovat žádný formát videa.
+<p>Funkce začíná <a href=#video>otestováním podpory <abbr>HTML5</abbr> videa</a> pomocí funkce <code>supports_video()</code>, kterou jste poznali v předchozí sekci. Pokud váš prohlížeč nepodporuje <abbr>HTML5</abbr> video, nebude také podporovat žádný formát videa.
 
 <pre><code>  if (<mark>!supports_video()</mark>) { return false; }</code></pre>
 
@@ -213,7 +213,7 @@ body{counter-reset:h1 2}
 
 <pre><code>  var <mark>v</mark> = document.createElement("video");</code></pre>
 
-<p>&#8222;Formát videa&#8220; je ve skutečností kombinací několika věcí. Technicky řečeno se prohlížeče ptáte, zda dokáže přehrát video v H.264 a zvuk v AAC LC, obojí vložené v kontejneru. (Co to všechno znamená si vysvětlíme v <a href=video.html>kapitole o videu</a>. Může vás také zajímat článek <a href=http://diveintomark.org/tag/give>A gentle introduction to video encoding</a>.)
+<p>&#8222;Formát videa&#8220; je ve skutečnosti kombinací několika věcí. Technicky řečeno se prohlížeče ptáte, zda dokáže přehrát video v H.264 a zvuk v AAC LC, obojí vložené v kontejneru. (Co to všechno znamená si vysvětlíme v <a href=video.html>kapitole o videu</a>. Může vás také zajímat článek <a href=http://diveintomark.org/tag/give>A gentle introduction to video encoding</a>.)
 
 <pre><code>  return v.canPlayType('<mark>video/mp4; codecs="avc1.42E01E, mp4a.40.2"</mark>');</code></pre>
 
@@ -261,7 +261,7 @@ body{counter-reset:h1 2}
 
 <p class=ss style="width:135px"><img src=i/openclipart.org_johnny_automatic_half_stack_of_horizontal_sections.png alt="kabinet plný zásuvek rozličných rozměrů" width=135 height=341><br><span id=live-storage></span>
 
-<p><a href=http://dev.w3.org/html5/webstorage/><abbr>HTML5</abbr> úložiště</a> nabízí způsob, jakým mohou webové stránky uložit informace na váš počítač a pozdeji je znovu načíst. Jedná se podobný koncept jako byly cookies, ovšem je navržený pro větší množství informací. Cookies mají omezenou velikost a váš prohlížeč je zasílá zpět na server kdykoliv požádá o novou stránku (což zabírá čas i datové pásmo). <abbr>HTML5</abbr> úložiště zůstává na vašem počítači, webové stránky k němu mohou přistoupit pomocí JavaScriptu.
+<p><a href=http://dev.w3.org/html5/webstorage/><abbr>HTML5</abbr> úložiště</a> nabízí způsob, jakým mohou webové stránky uložit informace na váš počítač a později je znovu načíst. Jedná se podobný koncept jako byly cookies, ovšem je navržený pro větší množství informací. Cookies mají omezenou velikost a váš prohlížeč je zasílá zpět na server kdykoliv požádá o novou stránku (což zabírá čas i datové pásmo). <abbr>HTML5</abbr> úložiště zůstává na vašem počítači, webové stránky k němu mohou přistoupit pomocí JavaScriptu.
 
 <div class="pf clear">
 <h4>Zeptejte se profesora Značky</h4>
@@ -311,7 +311,7 @@ OD: Kdokoliv, kdo má fyzický přístup k počítači by se mohl na data vašeh
 
 <p class=ss style="margin:1.75em"><span id=live-web-workers></span>
 
-<p><a href=http://www.whatwg.org/specs/web-workers/current-work/>Web Workers</a> nabízí standardizovanou cestu, jakou mohou prohlížeče spouštět javascriptový kód na pozadí. S pomocí web workers můžete spustit několik &#8222;vláken&#8220; a ty pak mohou běžet více méně ve stejném čase. (Stačí, když si představíte, že váš počítač dokáže současně spustit několik aplikací, je to skoro to samé.) Tato &#8222;vlákna na pozadí&#8220; mohou provádět složité matematické výpočty a sítové požadavky nebo přistupovat k <a href=#local-storage>local storage</a> zatímco hlavní webová stránka reaguje na akce uživatele, ať už se jedná o skrolování, klikání nebo psaní.
+<p><a href=http://www.whatwg.org/specs/web-workers/current-work/>Web Workers</a> nabízí standardizovanou cestu, jak mohou prohlížeče spouštět javascriptový kód na pozadí. S pomocí web workers můžete spustit několik &#8222;vláken&#8220; a ty pak mohou běžet více méně ve stejném čase. (Stačí, když si představíte, že váš počítač dokáže současně spustit několik aplikací, je to skoro to samé.) Tato &#8222;vlákna na pozadí&#8220; mohou provádět složité matematické výpočty a síťové požadavky nebo přistupovat k <a href=#local-storage>local storage</a> zatímco hlavní webová stránka reaguje na akce uživatele, ať už se jedná o skrolování, klikání nebo psaní.
 
 <p>Test podpory web workers využívá <a href=#techniques>detekční techniku #1</a>. Pokud váš prohlížeč podporuje Web Worker <abbr>API</abbr>, bude u globálního objektu <code>window</code> existovat vlastnost <code>Worker</code>. Pokud váš prohlížeč nepodporuje Web Worker <abbr>API</abbr>, pak bude vlastnost <code>Worker</code> nedefinovaná.
 
@@ -339,7 +339,7 @@ OD: Kdokoliv, kdo má fyzický přístup k počítači by se mohl na data vašeh
 
 <p>Je snadné číst webové stránky, když jste offline: stačí se připojit k internetu, načíst webovou stránku, odpojit se od internetu, odjet na opuštěnou chatu a tam si vklidu stránku přečíst. (Abyste ušetřili čas, klidně přeskočte ten krok s chatou.) Ovšem, co webové aplikace jako jsou <a href=http://mail.google.com/>Gmail</a> nebo <a href=http://docs.google.com/>Dokumenty Google</a>? S <abbr>HTML5</abbr> může kdokoliv (nejen Google!) vytvářet aplikace, které fungují offline.
 
-<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#offline>Offline webové aplikace</a> začínají jako online webové aplikace. Když prvně navštívíte aplikaci podporující režim offline, webový server řekne prohlížeči, které soubory bude potřebovat, aby mohl fungovat offline. Může se jednat o jakékoliv soubory &mdash; <abbr>HTML</abbr>, JavaScript, obrázky, dokonce <a href=#video>videa</a>. Jakmile váš prohlížeč stáhne všechny potřebné soubory, můžete stránku znovu navštívit, i když nejste připojeni k internetu. Váš prohlížeč si všimne, že jste právě offline a použije soubory, které si předtím stáhnul. Jakmile se opět připojíte online, všechny změny, které jste provedli, se nahrají na vzdálený webový server.
+<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#offline>Offline webové aplikace</a> začínají jako online webové aplikace. Když prvně navštívíte aplikaci podporující režim offline, webový server řekne prohlížeči, které soubory bude potřebovat, aby mohla fungovat offline. Může se jednat o jakékoliv soubory &mdash; <abbr>HTML</abbr>, JavaScript, obrázky, dokonce <a href=#video>videa</a>. Jakmile váš prohlížeč stáhne všechny potřebné soubory, můžete stránku znovu navštívit, i když nejste připojeni k internetu. Váš prohlížeč si všimne, že jste právě offline a použije soubory, které si předtím stáhnul. Jakmile se opět připojíte online, všechny změny, které jste provedli, se nahrají na vzdálený webový server.
 
 <p>Test na podporu pro offline používá <a href=#techniques>detekční techniku #1</a>. Pokud váš prohlížeč podporuje offline webové aplikace, bude u globálního objektu <code>window</code> existovat vlastnost <code>applicationCache</code>. Pokud váš prohlížeč offline webové aplikace nepodporuje, pak bude vlastnost <code>applicationCache</code> nedefinovaná. Podporu pro offline webové aplikace můžete otestovat následující funkcí:
 
@@ -393,9 +393,9 @@ OD: Podpora pro geolokaci je do prohlížečů přidávána právě teď, ve ste
   // můžeme vyzkoušet Gears nebo jiný plugin třetích stran
 }</code></pre>
 
-<p>Pokud váš prohlížeč geolocation <abbr>API</abbr> nativně nepodporuje, stále ještě zbývá naděje. <a href=http://tools.google.com/gears/>Gears</a> je open source plugin od Googlu, který funguje na Windows, Macu, Linuxu, Windows Mobile a Androidu. Nabízí některé vlastnosti starším prohlížečům, které nepodporují novinky zmiňované v této kapitole. Jednou z vlastností, které Gears nabízí, je geolocation <abbr>API</abbr>. Není zcela stejné jako <code>navigator.geolocation</code> <abbr>API</abbr>, ale slouží ke stejnému účelu.
+<p>Pokud váš prohlížeč geolocation <abbr>API</abbr> nativně nepodporuje, stále ještě zbývá naděje. <a href=http://tools.google.com/gears/>Gears</a> je open source plugin od Googlu, který funguje na Windows, Macu, Linuxu, Windows Mobile a Androidu. Nabízí některé vlastnosti starším prohlížečům, které nepodporují novinky zmiňované v této kapitole. Jednou z vlastností, kterou Gears nabízí, je geolocation <abbr>API</abbr>. Není zcela stejné jako <code>navigator.geolocation</code> <abbr>API</abbr>, ale slouží ke stejnému účelu.
 
-<p>Existují také geolocation <abbr>API</abbr> specifiká pro jednotlivá zařízení, ta najdeme na starších mobilních platformách včetně <a href="http://www.tonybunce.com/2008/05/08/Blackberry-Browser-Amp-GPS.aspx">BlackBerry</a>, <a href="http://www.forum.nokia.com/infocenter/index.jsp?topic=/Web_Developers_Library/GUID-4DDE31C7-EC0D-4EEC-BC3A-A0B0351154F8.html">Nokia</a>, <a href="http://developer.palm.com/index.php?option=com_content&amp;view=article&amp;id=1673#GPS-getCurrentPosition">Palm</a>, a <a href=http://bondi.omtp.org/1.0/apis/geolocation.html><abbr title="Open Mobile Terminal Platform">OMTP</abbr> BONDI</a>.
+<p>Existují také geolocation <abbr>API</abbr> specifická pro jednotlivá zařízení, ta najdeme na starších mobilních platformách včetně <a href="http://www.tonybunce.com/2008/05/08/Blackberry-Browser-Amp-GPS.aspx">BlackBerry</a>, <a href="http://www.forum.nokia.com/infocenter/index.jsp?topic=/Web_Developers_Library/GUID-4DDE31C7-EC0D-4EEC-BC3A-A0B0351154F8.html">Nokia</a>, <a href="http://developer.palm.com/index.php?option=com_content&amp;view=article&amp;id=1673#GPS-getCurrentPosition">Palm</a>, a <a href=http://bondi.omtp.org/1.0/apis/geolocation.html><abbr title="Open Mobile Terminal Platform">OMTP</abbr> BONDI</a>.
 
 <p><a href=geolocation.html>Kapitola o geolokaci</a> vás zasvětí do detailů toho, jak můžete tato odlišná <abbr>API</abbr> používat.
 
@@ -425,7 +425,7 @@ OD: Podpora pro geolokaci je do prohlížečů přidávána právě teď, ve ste
 <li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#local-date-and-time-state><code>&lt;input type="datetime-local"></code></a> pro lokální datum a čas
 </ol>
 
-<p>Test podpory nových <abbr>HTML5</abbr> typů značky input používá <a href=#techniques>detekční techniku #4</a>. Napřed vytvoříme prádný prvek <code>&lt;input></code> v paměti. Výchozím tydem pro všechny prvky <code>&lt;input></code> je <code>"text"</code>. To se ukáže jako velmi důležité.
+<p>Test podpory nových <abbr>HTML5</abbr> typů značky input používá <a href=#techniques>detekční techniku #4</a>. Napřed vytvoříme prázdný prvek <code>&lt;input></code> v paměti. Výchozím tydem pro všechny prvky <code>&lt;input></code> je <code>"text"</code>. To se hned ukáže jako velmi důležité.
 
 <pre><code>  var i = document.createElement("input");</code></pre>
 
@@ -476,13 +476,13 @@ OD: Podpora pro geolokaci je do prohlížečů přidávána právě teď, ve ste
 
 <p class=ss style="width:188px"><img src=i/openclipart.org_johnny_automatic_angry_guy.png alt="rozčilený chlap se zvednutýma rukama" width=188 height=262><br><span id="live-input-autofocus"></span>
 
-<p>Webové stránky mohou používat JavaScript, aby automaticky předali fokus formulářovému poli. Např. titulní stránka  <a href=http://www.google.cz/>Google.cz</a> automaticky předá fokus textovému poli, takže můžete rovnou začít psát váš dotaz aniž byste museli přemisťovat kurzor do vyhledávacího pole. Ačkoliv to většině uživatelů vyhovuje, může to rušit pokročilé uživatele nebo uživatele se specifickými potřebami. Pokud stisknete mezerník a očekáváte odstránkování webové stránky, stránka se neposune, protože fokus je již v textovém poli. (Místo toho prostě napíšete mezeru.) Pokud během načítání stránky vyberete odlišné fomulářové pole, skript stránky stejně ve &#8222;snaze pomoci&#8220; přesune fokus na výchozí formulářové pole a vy tak můžete psát na místo, kam jste psát nechtěli.
+<p>Webové stránky mohou používat JavaScript, aby automaticky předaly fokus formulářovému poli. Např. titulní stránka  <a href=http://www.google.cz/>Google.cz</a> automaticky předá fokus textovému poli, takže můžete rovnou začít psát váš dotaz, aniž byste museli přemisťovat kurzor do vyhledávacího pole. Ačkoliv to většině uživatelů vyhovuje, může to rušit pokročilé uživatele nebo uživatele se specifickými potřebami. Pokud stisknete mezerník a očekáváte odstránkování webové stránky, stránka se neposune, protože fokus je již v textovém poli. (Místo toho prostě napíšete mezeru.) Pokud během načítání stránky vyberete odlišné formulářové pole, skript stránky stejně ve &#8222;snaze pomoci&#8220; přesune fokus na výchozí formulářové pole a vy tak můžete psát na místo, kam jste psát nechtěli.
 
-<p>Jelikož se autofocus řeší JavaScriptem, není jednoduché vyřešit všechny zmíněné případy, a kdo by se zdržoval s uživateli, kteří nechtějí, aby jim webová stránka kradla fokus?
+<p>Jelikož se autofocus řeší JavaScriptem, není jednoduché vyřešit všechny zmíněné případy, a kdo by se také zdržoval s uživateli, kteří nechtějí, aby jim webová stránka kradla fokus?
 
-<p>Jako řešení představilo <abbr>HTML5</abbr> <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control>atribut <code>autofocus</code> pro formulářová pole</a>. Atribut <code>autofocus</code> dělá přesně to, co říká: přemístí fokus na zvolené vstupní pole. Jelikož je vše řešeno na úrovni značkovacího jazyka a nikoliv JavaScriptem, bude toto chování jednotné pro všechny webové stránky. Výrobci prohlížečů (nebo autoři rozšíření) mohou uživatelům nabídnout možnost autofocus vypnout.
+<p>Jako řešení představilo <abbr>HTML5</abbr> <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control>atribut <code>autofocus</code> pro formulářová pole</a>. Atribut <code>autofocus</code> dělá přesně to, co říká: přemístí fokus na zvolené vstupní pole. Jelikož je vše řešeno na úrovni značkovacího jazyka a nikoliv JavaScriptu, bude toto chování jednotné pro všechny webové stránky. Výrobci prohlížečů (nebo autoři rozšíření) mohou uživatelům nabídnout možnost autofocus vypnout.
 
-<p>Test podporu autofokusy používá <a href=#techniques>detekční techniku #2</a>. Pokud váš prohlížeč podporuje autofokus webových formulářů, bude mít objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;input></code> vlastnost <code>autofocus</code> (a to i v případě, pokud jste do <abbr>HTML</abbr> atribut <code>autofocus</code> nezapsali). Pokud váš prohlížeč nepodporuje autofokus webových formulářů, objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;input></code> nebude mít vlastnost <code>autofocus</code>. K detekci můžete použít tuto funkci:
+<p>Test podpory autofokusu používá <a href=#techniques>detekční techniku #2</a>. Pokud váš prohlížeč podporuje autofokus webových formulářů, bude mít objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;input></code> vlastnost <code>autofocus</code> (a to i v případě, pokud jste do <abbr>HTML</abbr> atribut <code>autofocus</code> nezapsali). Pokud váš prohlížeč nepodporuje autofokus webových formulářů, objekt <abbr>DOM</abbr> reprezentující vytvořený prvek <code>&lt;input></code> nebude mít vlastnost <code>autofocus</code>. K detekci můžete použít tuto funkci:
 
 <pre><code>function supports_input_autofocus() {
   var i = document.createElement('input');
@@ -507,7 +507,7 @@ OD: Podpora pro geolokaci je do prohlížečů přidávána právě teď, ve ste
 
 <p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#microdata>Mikrodata</a> je standardizovaný způsob pro vkládání další sémantiky do vašich webových stránek. Můžete např. použít mikrodata pro zdůraznění, že daná fotografie je dostupná pod danou Creative Commons licencí. Jak uvidíte v <a href=extensibility.html>kapitole o distributed extensibility</a>, můžete použít mikrodata k označkování stránky &#8222;O mně&#8220;. Prohlížeče, rozšíření prohlížečů a vyhledávače mohou zkonvertovat <abbr>HTML5</abbr> mikrodata na <a href=http://en.wikipedia.org/wiki/VCard>vCard</a>, což je standardizovaný formát pro sdílení kontaktů. Můžete také definovat své vlastní slovníky pro mikrodata.
 
-<p>Standard pro <abbr>HTML5</abbr> mikrodata zahrnuje jak <abbr>HTML</abbr> značkování (zejména pro vyhledávače) tak sadu funkcí <abbr>DOM</abbr> (primárně pro prohlížeče). Použitím mikrodat na vašich webových stránkách nemůžete nic zkazit. Nejedná se o nic víc, než několik správně umístěných atributů; vyhledávače, které mikrodatům nerozumí, je budou prostě ignorovat. Ovšem, pokud potřebujete přistupovat a pracovat s mikrodaty skrze <abbr>DOM</abbr>, musíte napřed otestovat, zda prohlížeč podoruje microdata <abbr>DOM</abbr> <abbr>API</abbr>.
+<p>Standard pro <abbr>HTML5</abbr> mikrodata zahrnuje jak <abbr>HTML</abbr> značkování (zejména pro vyhledávače) tak sadu funkcí <abbr>DOM</abbr> (primárně pro prohlížeče). Použitím mikrodat na vašich webových stránkách nemůžete nic zkazit. Nejedná se o nic víc, než několik správně umístěných atributů; vyhledávače, které mikrodatům nerozumí, je budou prostě ignorovat. Ovšem, pokud potřebujete přistupovat a pracovat s mikrodaty skrze <abbr>DOM</abbr>, musíte napřed otestovat, zda prohlížeč podporuje microdata <abbr>DOM</abbr> <abbr>API</abbr>.
 
 <p>Test podpory <abbr>HTML5</abbr> microdata <abbr>API</abbr> používá <a href=#techniques>detekční techniku #1</a>. Pokud váš prohlížeč podporuje <abbr>HTML5</abbr> microdata <abbr>API</abbr>, pak na globálním objektu <code>document</code> bude existovat funkce <code>getItems()</code>. Pokud váš prohlížeč microdata nepodporuje, pak bude funkce <code>getItems()</code> nedefinovaná.
 
@@ -523,7 +523,7 @@ OD: Podpora pro geolokaci je do prohlížečů přidávána právě teď, ve ste
 
 <p class=ss style="float:left;margin:0 1.75em 1.75em 0;width:218px"><img src=i/openclipart.org_johnny_automatic_demon_reading_Stewart_Orr.png alt="démon čtoučí knížku" width=218 height=231><br><span id=live-history-api></span>
 
-<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html><abbr>HTML5</abbr> history <abbr>API</abbr></a> je standardizovaný způsob manipilace s historií prohlížeče pomocí skriptu. Část tohoto <abbr>API</abbr> &mdash; navigování historií &mdash; byla dostupná v předchozích verzích <abbr>HTML</abbr>. V <abbr>HTML5</abbr> přibyla možnost přidávat nové položky do historie prohlížeče a reagovat, pokud se tlačítkem back prohlížeče změní hladina zásobníku těchto položek- To znamená, že <abbr>URL</abbr> může i nadále sloužit jako jedinečný identifikátor daného zdroje, dokonce i pro komplikovanou javascriptovou aplikaci, která příliš často neprovádí načtení celé nové stránky.
+<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html><abbr>HTML5</abbr> history <abbr>API</abbr></a> je standardizovaný způsob práce s historií prohlížeče pomocí skriptu. Část tohoto <abbr>API</abbr> &mdash; navigování historií &mdash; byla dostupná v předchozích verzích <abbr>HTML</abbr>. V <abbr>HTML5</abbr> přibyla možnost přidávat nové položky do historie prohlížeče a reagovat, pokud se tlačítkem &#8222;Zpět&#8220; prohlížeče změní hladina zásobníku těchto položek. To znamená, že <abbr>URL</abbr> může i nadále sloužit jako jedinečný identifikátor daného zdroje, dokonce i pro komplikovanou javascriptovou aplikaci, která příliš často neprovádí načtení celé nové stránky.
 
 <p>Test podpory <abbr>HTML5</abbr> history <abbr>API</abbr> využívá <a href=#techniques>detekční techniku #1</a>. Pokud váš prohlížeč podporuje <abbr>HTML5</abbr> history <abbr>API</abbr>, bude u globálního objektu <code>history</code> existovat funkce <code>pushState()</code>. Pokud váš prohlížeč nepodporuje history <abbr>API</abbr>, nebude funkce <code>pushState()</code> definovaná.
 
@@ -545,14 +545,14 @@ OD: Podpora pro geolokaci je do prohlížečů přidávána právě teď, ve ste
 
 <h2 id=further-reading>Další čtení</h2>
 
-<p>Specifikace a stnadardy:
+<p>Specifikace a standardy:
 
 <ul>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>the <code>&lt;canvas></code> element</a>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#video>the <code>&lt;video></code> element</a>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html><code>&lt;canvas></code> element</a>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#video><code>&lt;video></code> element</a>
 <li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#states-of-the-type-attribute><code>&lt;input></code> types</a>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-placeholder-attribute>the <code>&lt;input placeholder></code> attribute</a>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control>the <code>&lt;input autofocus></code> attribute</a>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-placeholder-attribute><code>&lt;input placeholder></code> attribute</a>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control><code>&lt;input autofocus></code> attribute</a>
 <li><a href=http://dev.w3.org/html5/webstorage/><abbr>HTML5</abbr> storage</a>
 <li><a href=http://www.whatwg.org/specs/web-workers/current-work/>Web Workers</a>
 <li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#offline>Offline web applications</a>
@@ -580,13 +580,13 @@ OD: Podpora pro geolokaci je do prohlížečů přidávána právě teď, ve ste
 
 <p class=a>&#x2767;
 
-<p>Dočetli jste &#8222;Detekujeme podporu <abbr>HTML5</abbr>.&#8220; Pro další čtení přejděte na <a href=table-of-contents.html>celý obsah knihy</a>.
+<p>Dočetli jste kapitolu &#8222;Detekujeme podporu <abbr>HTML5</abbr>.&#8220; Pokud chcete pokračovat, přejděte na <a href=table-of-contents.html>celý obsah knihy</a>.
 
 <div class=pf>
-<h4>Did You Know?</h4>
+<h4>Víte že?</h4>
 <div class=moneybags>
-<blockquote><p>In association with Google Press, O&#8217;Reilly is distributing this book in a variety of formats, including paper, ePub, Mobi, and <abbr>DRM</abbr>-free <abbr>PDF</abbr>. The paid edition is called &#8220;HTML5: Up &amp; Running,&#8220; and it is available now. This chapter is included in the paid edition.
-<p>If you liked this chapter and want to show your appreciation, you can <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">buy &#8220;HTML5: Up &amp; Running&#8220; with this affiliate link</a> or <a href=http://oreilly.com/catalog/9780596806033>buy an electronic edition directly from O&#8217;Reilly</a>. You&#8217;ll get a book, and I&#8217;ll get a buck. I do not currently accept direct donations.
+<blockquote><p>O&#8217;Reilly spolu s Google Press nabízí anglickou verzi této knihy v řadě formátů včetně tištěné pdoby, ePub, Mobi, and <abbr>DRM</abbr>-free <abbr>PDF</abbr>. Placená verze se nazývá &#8222;HTML5: Up &amp; Running,&#8220; a můžete ji mít ihned.
+<p>Pokud se vám tahle kapitola líbila a chcete autora anglického originálu podpořit, <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">kupte si &#8222;HTML5: Up &amp; Running&#8220; skrze tento affiliate odkaz</a> nebo <a href=http://oreilly.com/catalog/9780596806033>elektronickou verzi přímo od O&#8217;Reilly</a>.
 </blockquote>
 </div>
 </div>
@@ -602,11 +602,11 @@ OD: Podpora pro geolokaci je do prohlížečů přidávána právě teď, ve ste
 <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAArKygPSJECqoe3nBTUsQNyRTvLVXcqY7Szy8ilpe6LdIiNqza1BRpjssKFrYhkHtUr1vKcA5219YSyQ"></script>
 <script>
 function supports(bool, suffix) {
-  var s = "Your browser ";
+  var s = "Váš prohlížeč ";
   if (bool) {
-    s += "supports " + suffix + ".";
+    s += "podporuje " + suffix + ".";
   } else {
-    s += "does not support " + suffix + ". :(";
+    s += "nepodporuje " + suffix + ". :(";
   }
   return s;
 }
@@ -632,11 +632,11 @@ function show_map(loc) {
   map.addOverlay(new GMarker(center, {draggable: false, title: "You are here (more or less)"}));
 }
 function show_map_error() {
-  $("#live-geolocation").html('Unable to determine your location.');
+  $("#live-geolocation").html('Nedokázali jsme určit vaši polohu.');
 }
 $(function() {
-  $("#live-canvas").html(supports(Modernizr.canvas, "the canvas API"));
-  $("#live-canvas-text").html(supports(Modernizr.canvastext, "the canvas text API"));
+  $("#live-canvas").html(supports(Modernizr.canvas, "canvas API"));
+  $("#live-canvas-text").html(supports(Modernizr.canvastext, "canvas text API"));
   $("#live-video").html(supports(Modernizr.video, "HTML5 video"));
   if (Modernizr.video) {
     var ogg = Modernizr.video.ogg;
@@ -664,13 +664,13 @@ $(function() {
   try {
     localstorage = Modernizr.localstorage;
   } catch(e) {}
-  $("#live-storage").html(supports(localstorage, "HTML5 storage"));
+  $("#live-storage").html(supports(localstorage, "HTML5 úložiště"));
   $("#live-web-workers").html(supports(Modernizr.webworkers, "web workers"));
-  $("#live-offline").html(supports(Modernizr.applicationcache, "offline web applications"));
+  $("#live-offline").html(supports(Modernizr.applicationcache, "offline webové aplikace"));
   if (geo_position_js.init()) {
-    $("#live-geolocation").html(supports(true, "geolocation") + ' <a href="#" onclick="lookup_location();return false">Click to look up your location</a>.');
+    $("#live-geolocation").html(supports(true, "geolokaci") + ' <a href="#" onclick="lookup_location();return false">Klikněte a zobrazí se vaše pozice.</a>.');
   } else {
-    $("#live-geolocation").html(supports(false, "geolocation"));
+    $("#live-geolocation").html(supports(false, "geolokaci"));
   }
   var supported_input_types = '';
   for (var itype in Modernizr.inputtypes) {
@@ -679,11 +679,11 @@ $(function() {
     }
   }
   if (!!supported_input_types) {
-    $("#live-input-types").html('Your browser supports the following HTML5 input types: ' + supported_input_types.replace(/, $/, ''));
+    $("#live-input-types").html('Váš prohlížeč podporuje tyto HTML5 typy značky input: ' + supported_input_types.replace(/, $/, ''));
   } else {
-    $("#live-input-types").html('Your browser does not support any HTML5 input types.');
+    $("#live-input-types").html('Váš prohlížeče nepodoruje žádné HTML5 typy značky input.');
   }
-  $("#live-input-autofocus").html(supports(!!("autofocus" in document.createElement("input")), "form autofocus"));
+  $("#live-input-autofocus").html(supports(!!("autofocus" in document.createElement("input")), "autofokus formulářů"));
   $("#live-microdata-api").html(supports(!!document.getItems, "the HTML5 microdata API"));
   $("#live-history-api").html(supports(!!Modernizr.history, "the HTML5 history API"));
 });

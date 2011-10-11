@@ -4,10 +4,25 @@ Prosim prekladatele, aby obsah tohoto souboru sledovali.
 pripadne komentovali nebo doplnovali vlastni navrhy:
 https://github.com/met/diveintohtml5/blob/master/slovnicek.txt
 
-CO PREFEROVAT?
+---------------------------------------------------------------------
+ CO PREFEROVAT?
+---------------------------------------------------------------------
+
+storage - úložiště
+email - *e-mail* nikoliv email
+DOM - *v DOMu* místo v DOM, tj. skloňovat
+offline - offline (tj. nepřekládat)
 
 HTML elements - elementy HTML vs *prvky HTML* // JESTE DEBATUJEME S JIRKOU KOSKEM, ktery doporucuje "elementy HTML"
-DOM - *v DOMu* vs v DOM, tj. sklonovat
-email - *e-mail* vs email
+
+Jakého rodu je HTML - "ten HTML něco definoval" nebo "to HTML definovalo" ???
 canvas - canvas vs platno ???
-Jak� je rod HTML - "ten HTML n�co definoval" nebo "to HTML definovalo" ???
+Web Workers - ???
+placeholder - ???
+
+---------------------------------------------------------------------
+ FRÁZE Z KNIHY
+---------------------------------------------------------------------
+
+Ask Professor Markup - Zeptejte se profesora Značky
+

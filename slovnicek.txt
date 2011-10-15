@@ -20,6 +20,7 @@ canvas - canvas vs platno ???
 Web Workers - ???
 placeholder - ???
 cache manifest (file) - ???
+cache/caching - keš/kešování ???
 
 ---------------------------------------------------------------------
  FRÁZE Z KNIHY

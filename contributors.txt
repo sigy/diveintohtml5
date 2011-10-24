@@ -3,7 +3,7 @@ CHAPTER                   - size- translator
 kap.0  introduction.html  - 10k - DONE Martin Hassman
 kap.1  past.html          - 55k - Martin Hassman - @hassmanm
 kap.2  detect.html        - 56k - DONE Martin Hassman
-kap.3  semantics.html     - 76k - Pavel Satrapa
+kap.3  semantics.html     - 76k - DONE Pavel Satrapa
 kap.4  canvas.html        - 55k - Jiri Sekera @signalizer
 kap.5  video.html         - 90k - Jiri Krajnak 1. polovina kap.
 kap.6  geolocation.html   - 32k - Petr Praus @petr_praus 1. polovina kap.

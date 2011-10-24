@@ -19,6 +19,8 @@ Jakého rodu je HTML - "ten HTML něco definoval" nebo "to HTML definovalo" ???
 canvas - canvas vs platno ???
 Web Workers - ???
 placeholder - ???
+cache manifest (file) - ???
+cache/caching - keš/kešování ???
 
 ---------------------------------------------------------------------
  FRÁZE Z KNIHY

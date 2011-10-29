@@ -22,6 +22,9 @@ placeholder - ???
 cache manifest (file) - ???
 cache/caching - cache/cachování vs keš/kešování ???
 
+canvas - dle kontextu canvas, plátno nebo kreslicí plátno?
+drawing context - kreslicí prostředí, případně originál?
+
 ---------------------------------------------------------------------
  FRÁZE Z KNIHY
 ---------------------------------------------------------------------
